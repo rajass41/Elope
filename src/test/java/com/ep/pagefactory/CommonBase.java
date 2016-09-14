@@ -503,7 +503,7 @@ public class CommonBase {
 			 Multipart multipart = new MimeMultipart();
 			 multipart.addBodyPart(objMessageBodyPart);
 			 objMessageBodyPart = new MimeBodyPart();
-			 String filename = "E:/Seleniumeclipsewoekspace/ElopParentProject/test-output/Extent.html";        
+			 String filename = "D:/ElopParentProject/test-output/Extent.html";        
 			 File file = new File(filename);
 			 //Create data source to attach the file in mail
 			 DataSource source = new FileDataSource(file);
