@@ -26,5 +26,8 @@ public class StudentFormObjects extends CommonBase {
 		webelement = driver.findElement(By.xpath("html/body/div[1]/section[1]/div/div/div/div/form/div/div[2]/div/div/div[2]/div[1]/select"));
         return webelement;
         }
-
+	public static WebElement lastname(WebDriver driver){
+		webelement = driver.findElement(By.id("StudentLastName"));
+        return webelement;
+        }
 }
