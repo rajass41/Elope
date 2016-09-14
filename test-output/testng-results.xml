@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="EP_Automation" duration-ms="45482" started-at="2016-09-14T10:47:32Z" finished-at="2016-09-14T10:48:17Z">
+    <groups>
+    </groups>
+    <test name="EP_Automation" duration-ms="45482" started-at="2016-09-14T10:47:32Z" finished-at="2016-09-14T10:48:17Z">
+      <class name="com.ep.testscripts.TestSuite">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@3fc2959f]" name="setUp" is-config="true" duration-ms="14170" started-at="2016-09-14T16:17:32Z" finished-at="2016-09-14T16:17:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@3fc2959f]" name="Login" duration-ms="20830" started-at="2016-09-14T16:17:46Z" description="Login" data-provider="getLogin" finished-at="2016-09-14T16:18:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.ep.datainitialization.DataInt@46dffdc3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@3fc2959f]" name="close" is-config="true" duration-ms="10401" started-at="2016-09-14T16:18:07Z" finished-at="2016-09-14T16:18:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.ep.testscripts.TestSuite -->
+    </test> <!-- EP_Automation -->
+  </suite> <!-- EP_Automation -->
+</testng-results>

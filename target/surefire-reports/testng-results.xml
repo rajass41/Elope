@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SP_Automation" duration-ms="23554" started-at="2016-09-13T13:16:55Z" finished-at="2016-09-13T13:17:19Z">
+    <groups>
+    </groups>
+    <test name="SP_Automation" duration-ms="23554" started-at="2016-09-13T13:16:55Z" finished-at="2016-09-13T13:17:19Z">
+      <class name="com.sp.testscripts.SampleTestSuite">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.sp.testscripts.SampleTestSuite@6150c3ec]" name="setUp" is-config="true" duration-ms="9002" started-at="2016-09-13T18:46:55Z" finished-at="2016-09-13T18:47:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="Login(com.sp.datainitialization.DataInt)[pri:0, instance:com.sp.testscripts.SampleTestSuite@6150c3ec]" name="Login" duration-ms="14515" started-at="2016-09-13T18:47:04Z" description="Login" data-provider="getLogin" finished-at="2016-09-13T18:47:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.sp.datainitialization.DataInt@2a898881]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+      </class> <!-- com.sp.testscripts.SampleTestSuite -->
+    </test> <!-- SP_Automation -->
+  </suite> <!-- SP_Automation -->
+</testng-results>
