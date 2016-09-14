@@ -32,6 +32,8 @@ public class DriverHome extends CommonBase {
 		return PageFactory.initElements(driver, Login.class);
 	}
 	
-	
+	public StudentFormFill getformfill(){
+		return PageFactory.initElements(driver, StudentFormFill.class);
+	}
 }
 
