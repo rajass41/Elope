@@ -2,7 +2,6 @@ package com.ep.listeners;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
@@ -12,7 +11,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.ep.pagefactory.CommonBase;
 
 public class TestListener implements ITestListener {
@@ -42,8 +40,8 @@ public class TestListener implements ITestListener {
 
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				
-		// The below method will save the screen shot in d drive with test
-		// method name
+		// The below method will save the screen shot in  drive with test method name
+		
 		try {
 			FileUtils.copyFile(scrFile, new File(failedscreens + File.separator + methodName + "_" + browsername() + ".png"));
 					
