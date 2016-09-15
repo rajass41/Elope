@@ -39,11 +39,19 @@ public class DataInt implements Serializable {
  
 					
 					
+	//------Payment ---//
+					
+					public String Cardtype="";		
+					public String Cardnumber ="";		
+					public String Month ="";		
+					public String Year ="";
+					public String CVV  ="";
 					
 					
 					
 					
 	//----Login getter setters-------//			
+					
 					
 					public String getUsername() {
 						return username;
@@ -184,7 +192,40 @@ public class DataInt implements Serializable {
 							String signatureLegalParentorGuardian) {
 						SignatureLegalParentorGuardian = signatureLegalParentorGuardian;
 					}
-										
+			
+					
+				//---------Paymeny getter and Setter methods------//	
+					
+					public String getCardtype() {
+						return Cardtype;
+					}
+					public void setCardtype(String cardtype) {
+						Cardtype = cardtype;
+					}
+					public String getCardnumber() {
+						return Cardnumber;
+					}
+					public void setCardnumber(String cardnumber) {
+						Cardnumber = cardnumber;
+					}
+					public String getMonth() {
+						return Month;
+					}
+					public void setMonth(String month) {
+						Month = month;
+					}
+					public String getYear() {
+						return Year;
+					}
+					public void setYear(String year) {
+						Year = year;
+					}
+					public String getCVV() {
+						return CVV;
+					}
+					public void setCVV(String cVV) {
+						CVV = cVV;
+					}
 }	
 					
 	
