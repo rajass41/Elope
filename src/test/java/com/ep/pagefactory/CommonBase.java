@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -26,7 +25,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -50,7 +48,6 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
-
 import com.ep.utilities.PropertiesFileReader;
 
 
@@ -496,6 +493,7 @@ public class CommonBase {
 			 message.setText(body);
 			 BodyPart objMessageBodyPart = new MimeBodyPart();
 			 objMessageBodyPart.setText("Hi,"
+			 		+ "\n"
 			 		+ "\n"
 			 		+ "    Please Find The Attached Automation Report File dowlnload and then open it!"
 			 		+ "\n"
