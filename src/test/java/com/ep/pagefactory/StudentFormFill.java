@@ -1,9 +1,11 @@
 package com.ep.pagefactory;
 
 import junit.framework.Assert;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import com.ep.datainitialization.DataInt;
+import com.ep.pageobjects.PaymentObjects;
 import com.ep.pageobjects.StudentFormObjects;
 
 
@@ -16,7 +18,7 @@ public class StudentFormFill extends CommonBase {
 
 	public void newformfill(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(8000);
+			Thread.sleep(6000);
 			StudentFormObjects.newstudentform(driver).click();
 			Thread.sleep(5000);
 			StudentFormObjects.beforeandafter(driver).click();
@@ -57,13 +59,32 @@ public class StudentFormFill extends CommonBase {
 			super.systemdateselect();
 			StudentFormObjects.terms(driver).click();
 			Thread.sleep(3000);
-			//StudentFormObjects.submit(driver).click();
+			StudentFormObjects.submit(driver).click();
 			
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
 
 		}
-	}	
+	}
+	
+	
+	public void Payment(DataInt dataInt) throws Exception {
+		try {
+			Thread.sleep(8000);
+			PaymentObjects.cardtype(driver).sendKeys(dataInt.getCardtype());
+			PaymentObjects.cardnumber(driver).sendKeys(dataInt.getCardnumber());
+			PaymentObjects.month(driver).sendKeys(dataInt.getMonth());
+			PaymentObjects.year(driver).sendKeys(dataInt.getYear());
+			PaymentObjects.cvv(driver).sendKeys(dataInt.getCVV());
+			Thread.sleep(2000);
+			PaymentObjects.paynow(driver).click();
+			
+		} catch (Exception e) {
+			excep = e.toString();
+			Assert.fail(excep);
 
+		}
+	}
+	
 }
