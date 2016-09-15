@@ -1,19 +1,10 @@
 package com.ep.testscripts;
 
 import java.util.Iterator;
-
 import org.apache.log4j.Logger;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-
-
-
-
-
-
 import com.ep.datainitialization.DataInt;
-//import com.yp.pagefactory.YPBase;
 import com.ep.utilities.Util;
 import com.ep.utilities.Xls_Reader;
 
@@ -34,10 +25,11 @@ public class TestSuite extends Base {
 	}
 	
 	
-	@Test(description = "StudentFormfill", dataProvider = "getStudentForm", priority = 1)
+	@Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 1)
 	public void fillingform(DataInt dataInt) throws Exception {
 		formfill=driverhome.getformfill();
 		formfill.newformfill(dataInt);
+		formfill.Payment(dataInt);
 					
 	}
 	
@@ -55,7 +47,7 @@ public class TestSuite extends Base {
 
 			}	
 			
-			
+				
 }
 
 
