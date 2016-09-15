@@ -34,6 +34,12 @@ public class TestSuite extends Base {
 	}
 	
 	
+	@Test(description = "StudentFormfill", dataProvider = "getStudentForm", priority = 1)
+	public void fillingform(DataInt dataInt) throws Exception {
+		formfill=driverhome.getformfill();
+		formfill.newformfill(dataInt);
+					
+	}
 	
 	
 	
@@ -43,7 +49,11 @@ public class TestSuite extends Base {
 
 			}
 			
-			
+			@DataProvider
+			public Iterator<Object[]> getStudentForm() {
+				return Util.getStudentForm("StudentForm", xls).iterator();
+
+			}	
 			
 			
 }
