@@ -64,7 +64,11 @@ public class StudentFormObjects extends CommonBase {
         }
 	
 	public static WebElement gender(WebDriver driver){
-		webelement = driver.findElement(By.id("YesImmunizationRecordatSchool"));
+		webelement = driver.findElement(By.id("GenderMale"));
+        return webelement;
+        }
+	public static WebElement ImmunizationRecordatSchool(WebDriver driver){
+		webelement = driver.findElement(By.id("NoImmunizationRecordatSchool"));
         return webelement;
         }
 	
