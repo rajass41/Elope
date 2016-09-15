@@ -3,12 +3,15 @@ package com.ep.pagefactory;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -23,6 +26,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -46,6 +50,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
+
 import com.ep.utilities.PropertiesFileReader;
 
 
@@ -525,5 +530,30 @@ public class CommonBase {
 		}
 		System.out.println("Report Was Sent Successfully....");
 }
+	 
+	//------------System Present Date select ------//
+		
+		
+			public static void systemdateselect(){
+				
+				try {
+					DateFormat dateformat = new SimpleDateFormat("d"); //date format
+		            Date date = new Date();					
+		            String today = dateformat.format(date);   
+		            WebElement dateWidget = driver.findElement(By.xpath("//*[@id='ui-datepicker-div']")); //find the calendar
+		            List<WebElement> columns=dateWidget.findElements(By.tagName("td"));  
+		            //comparing the text of cell with today's date and clicking it.
+		            for (WebElement cell : columns)
+		            {
+		               if (cell.getText().equals(today))
+		               {
+		                  cell.click();
+		                  break;
+		               }
+		            }
+				} catch (Exception e) {
+					
+				}
+			}
 	
 	}
