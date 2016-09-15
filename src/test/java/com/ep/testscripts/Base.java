@@ -9,6 +9,7 @@ import org.testng.annotations.Parameters;
 
 import com.ep.pagefactory.DriverHome;
 import com.ep.pagefactory.Login;
+import com.ep.pagefactory.StudentFormFill;
 import com.ep.utilities.Xls_Reader;
 
 /**
@@ -23,6 +24,7 @@ public class Base {
 	public static final Logger LOG = Logger.getLogger(Base.class);
 	public DriverHome driverhome;
 	public Login login;
+	public StudentFormFill formfill;
 	
 	public static String passMessage = null;
 	public static String finalMessage = null;
