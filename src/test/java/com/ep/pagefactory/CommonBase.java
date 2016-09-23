@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -25,6 +26,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -38,6 +40,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -48,6 +51,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
+
 import com.ep.utilities.PropertiesFileReader;
 
 
@@ -73,8 +77,7 @@ public class CommonBase {
 	public static WebDriver driver;
 	public static WebElement webelement = null;
 	public Screen s = new Screen();
-	
-	
+	public String serverpath="C:\\Program Files (x86)\\Microsoft Web Driver\\MicrosoftWebDriver.exe";
 	
 	// CommonBase File
 	
@@ -82,6 +85,7 @@ public class CommonBase {
 	String[] dialog;
 	protected String url = null;
 	protected String browser;
+	
 	public final int elementTimeOut = Integer.parseInt(PropertiesFileReader.getproperty("element.time.out"));
 	public int windowTimeOut = Integer.parseInt(PropertiesFileReader.getproperty("window.time.out"));
 			
@@ -118,7 +122,7 @@ public class CommonBase {
 	
 
 	public WebDriver initDriver(String url, String browser) throws Exception {
-		if (browser.equalsIgnoreCase("IE")) {
+		if (browser.equalsIgnoreCase("IE")|| browser.equalsIgnoreCase("internet explorer")) {
 			// Create the DesiredCapability object of InternetExplorer
 			DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 			// Setting this capability will make your tests unstable and hard to debug.
@@ -136,11 +140,19 @@ public class CommonBase {
 			driver = new InternetExplorerDriver(capabilities);
 			driver.get(url);
 
-		} else if (browser.equalsIgnoreCase("firefox")) {
+		} else if (browser.equalsIgnoreCase("firefox")||browser.equalsIgnoreCase("mozilla")||browser.equalsIgnoreCase("mozilla firefox")) {
+			System.setProperty(
+					"webdriver.gecko.driver",
+					System.getProperty("user.dir")
+							+ System.getProperty("file.separator")
+							+ "BrowserDrivers"
+							+ System.getProperty("file.separator")
+							+ "geckodriver.exe");
+			
 			driver = new FirefoxDriver(FirefoxDriverProfile());
 			driver.get(url);
 
-		} else if (browser.equalsIgnoreCase("chrome")) {
+		} else if (browser.equalsIgnoreCase("chrome")||browser.equalsIgnoreCase("google chrome")) {
 			System.setProperty(
 					"webdriver.chrome.driver",
 					System.getProperty("user.dir")
@@ -151,7 +163,7 @@ public class CommonBase {
 			driver = new ChromeDriver();
 			driver.get(url);
 
-		}else if (browser.equalsIgnoreCase("safari")) {
+		}else if (browser.equalsIgnoreCase("safari")||browser.equalsIgnoreCase("apple safari")) {
 			System.setProperty("webdriver.safari.driver",
 					System.getProperty("user.dir")
 					       + System.getProperty("file.separator")
@@ -162,6 +174,20 @@ public class CommonBase {
 			driver.get(url);
 			                
 			
+		}else if (browser.equalsIgnoreCase("microsoft edge")||browser.equalsIgnoreCase("edge")) {
+			System.setProperty("webdriver.edge.driver",
+					System.getProperty("user.dir")
+					       + System.getProperty("file.separator")
+					       + "BrowserDrivers"
+					       + System.getProperty("file.separator")
+					       +"MicrosoftWebDriver.exe ");
+			
+			//System.setProperty("webdriver.edge.driver",new File (serverpath).getAbsolutePath());
+			driver = new EdgeDriver();
+			driver.get(url);
+			          	
+		}else {
+			throw new IllegalArgumentException("The Browser Type is Undefined");
 		}
      	driver.manage().window().maximize();
 		return driver;
@@ -188,6 +214,13 @@ public class CommonBase {
 		profile.setPreference("browser.download.manager.useWindow", false);
 		profile.setPreference("browser.download.manager.showAlertOnComplete",false);
 		profile.setPreference("browser.download.manager.closeWhenDone", false);
+		
+		/*profile.setPreference("javascript.enabled", true);
+		profile.setPreference("dom.max_chrome_script_run_time", 0);
+		profile.setPreference("dom.max_script_run_time", 0);
+		profile.setPreference("browser.startup.homepage_override.mstone", "ignore");
+		profile.setPreference("startup.homepage_welcome_url.additional",  "about:blank");
+		profile.setPreference("startup.homepage_welcome_url", "about:blank");*/
 		return profile;
 
 	}
