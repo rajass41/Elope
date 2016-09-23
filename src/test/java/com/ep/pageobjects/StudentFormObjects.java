@@ -14,7 +14,7 @@ public class StudentFormObjects extends CommonBase {
 	
 	public static WebElement newstudentform(WebDriver driver){
 		webelement = driver.findElement(By.xpath("html/body/div[1]/section[1]/div/div/form/div/div/div/div[2]/div/div/div/div/p/a[1]"));
-        return webelement;
+        return webelement;                        
         }
 	
 	public static WebElement beforeandafter(WebDriver driver){
@@ -156,7 +156,7 @@ public class StudentFormObjects extends CommonBase {
         }
 	
 	public static WebElement medicalcondition(WebDriver driver){
-		webelement = driver.findElement(By.id("checklst_1"));
+		webelement = driver.findElement(By.id("checklst"));
         return webelement;
         }
 	
