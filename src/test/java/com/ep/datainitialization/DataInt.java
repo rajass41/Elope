@@ -7,8 +7,25 @@ public class DataInt implements Serializable {
 	
 	private static final long serialVersionUID = -5841500346110682370L;
 	
+//----Signup-----//
+	
+	public String FirstName ="";
+	public String LastName ="";
+	public String Address1="";
+	public String Phonenumber="";
+	public String EmailAddress="";
+	public String Password="";
+	public String City="";
+	public String Zipcode="";
+	
+	
+	
+	
 
+	
+	
 					// ---Login------//
+	
 	
 					public String username = "";
 					public String userpassword = "";
@@ -49,8 +66,61 @@ public class DataInt implements Serializable {
 					
 					
 					
+	//--Signup Getter and Setter Methods--//
 					
-	//----Login getter setters-------//			
+					public String getFirstName() {
+						return FirstName;
+					}
+					public void setFirstName(String firstName) {
+						FirstName = firstName;
+					}
+					public String getLastName() {
+						return LastName;
+					}
+					public void setLastName(String lastName) {
+						LastName = lastName;
+					}
+					public String getAddress1() {
+						return Address1;
+					}
+					public void setAddress1(String address1) {
+						Address1 = address1;
+					}
+					public String getPhonenumber() {
+						return Phonenumber;
+					}
+					public void setPhonenumber(String phonenumber) {
+						Phonenumber = phonenumber;
+					}
+					public String getEmailAddress() {
+						return EmailAddress;
+					}
+					public void setEmailAddress(String emailAddress) {
+						EmailAddress = emailAddress;
+					}
+					public String getPassword() {
+						return Password;
+					}
+					public void setPassword(String password) {
+						Password = password;
+					}
+					public String getCity() {
+						return City;
+					}
+					public void setCity(String city) {
+						City = city;
+					}
+					public String getZipCode() {
+						return ZipCode;
+					}
+					public void setZipCode(String zipCode) {
+						ZipCode = zipCode;
+					}
+					public String ZipCode="";					
+					
+					
+					
+	//----Login Getter and  Setters-------//			
 					
 					
 					public String getUsername() {
@@ -68,7 +138,7 @@ public class DataInt implements Serializable {
 					
 					
 					
-	//------StudentForm Getter setter----//
+	//------StudentForm Getter and Setter----//
 					
 					
 					public String getLastname() {
@@ -194,7 +264,7 @@ public class DataInt implements Serializable {
 					}
 			
 					
-				//---------Paymeny getter and Setter methods------//	
+				//---------Paymeny Getter and Setter methods------//	
 					
 					public String getCardtype() {
 						return Cardtype;
