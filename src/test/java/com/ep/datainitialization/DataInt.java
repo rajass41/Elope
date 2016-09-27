@@ -7,31 +7,24 @@ public class DataInt implements Serializable {
 	
 	private static final long serialVersionUID = -5841500346110682370L;
 	
-//----Signup-----//
+			//----Signup-----//
 	
-	public String FirstName ="";
-	public String LastName ="";
-	public String Address1="";
-	public String Phonenumber="";
-	public String EmailAddress="";
-	public String Password="";
-	public String City="";
-	public String Zipcode="";
+					public String FirstName ="";
+					public String LastName ="";
+					public String Address1="";
+					public String Phonenumber="";
+					public String EmailAddress="";
+					public String Password="";
+					public String City="";
+					public String Zipcode="";
 	
-	
-	
-	
-
-	
-	
-					// ---Login------//
-	
+			// ---Login------//
 	
 					public String username = "";
 					public String userpassword = "";
 					
 	
-					//----StudentForm----//
+			//----StudentForm----//
 							
 					public String Lastname ="";
 					public String Firstname ="";
@@ -56,7 +49,7 @@ public class DataInt implements Serializable {
  
 					
 					
-	//------Payment ---//
+			//------Payment ---//
 					
 					public String Cardtype="";		
 					public String Cardnumber ="";		
@@ -66,8 +59,28 @@ public class DataInt implements Serializable {
 					
 					
 					
-	//--Signup Getter and Setter Methods--//
+	       //-----Contactus---//
 					
+					public String Fname="";
+					public String Lname="";
+					public String Mailid="";
+					public String Ph="";
+					public String Company="";
+					public String city="";
+					public String Comments="";
+					
+		   //----Changepassword--//
+					
+					public String CurrentPassword="";
+					public String NewPassword="";
+					
+					
+					
+		 			
+	       //--Signup Getter and Setter Methods--//
+					
+					
+		   			
 					public String getFirstName() {
 						return FirstName;
 					}
@@ -120,8 +133,8 @@ public class DataInt implements Serializable {
 					
 					
 					
-	//----Login Getter and  Setters-------//			
-					
+	     //----Login Getter and  Setters-------//			
+	 				
 					
 					public String getUsername() {
 						return username;
@@ -137,8 +150,8 @@ public class DataInt implements Serializable {
 					}
 					
 					
-					
-	//------StudentForm Getter and Setter----//
+	 				
+	     //------StudentForm Getter and Setter----//
 					
 					
 					public String getLastname() {
@@ -264,7 +277,7 @@ public class DataInt implements Serializable {
 					}
 			
 					
-				//---------Paymeny Getter and Setter methods------//	
+		 //---------Paymeny Getter and Setter methods------//	
 					
 					public String getCardtype() {
 						return Cardtype;
@@ -295,13 +308,61 @@ public class DataInt implements Serializable {
 					}
 					public void setCVV(String cVV) {
 						CVV = cVV;
+	
+					}
+					
+		 //------Contactus Getter and setter methods--//
+					
+					
+					public String getFname() {
+						return Fname;
+					}
+					public void setFname(String fname) {
+						Fname = fname;
+					}
+					public String getLname() {
+						return Lname;
+					}
+					public void setLname(String lname) {
+						Lname = lname;
+					}
+					public String getMailid() {
+						return Mailid;
+					}
+					public void setMailid(String mailid) {
+						Mailid = mailid;
+					}
+					public String getPh() {
+						return Ph;
+					}
+					public void setPh(String ph) {
+						Ph = ph;
+					}
+					public String getCompany() {
+						return Company;
+					}
+					public void setCompany(String company) {
+						Company = company;
+					}
+					public String getComments() {
+						return Comments;
+					}
+					public void setComments(String comments) {
+						Comments = comments;
+					}
+					
+		 //-----Changepassword Getter and Setter Methods--//		
+					
+					public String getCurrentPassword() {
+						return CurrentPassword;
+					}
+					public void setCurrentPassword(String currentPassword) {
+						CurrentPassword = currentPassword;
+					}
+					public String getNewPassword() {
+						return NewPassword;
+					}
+					public void setNewPassword(String newPassword) {
+						NewPassword = newPassword;
 					}
 }	
-					
-	
-					
-
-
-
-
-
