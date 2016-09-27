@@ -18,7 +18,7 @@ public class StudentFormFill extends CommonBase {
 
 	public void newformfill(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(6000);
+			Thread.sleep(8000);
 			StudentFormObjects.newstudentform(driver).click();
 			Thread.sleep(5000);
 			StudentFormObjects.beforeandafter(driver).click();
@@ -32,7 +32,7 @@ public class StudentFormFill extends CommonBase {
 			StudentFormObjects.grade(driver).sendKeys(dataInt.getGrade());
 			StudentFormObjects.studentId(driver).sendKeys(dataInt.getStudentid());
 			StudentFormObjects.dateofbirth(driver).sendKeys(dataInt.getDOB());
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			StudentFormObjects.gender(driver).click();
 			StudentFormObjects.ImmunizationRecordatSchool(driver).click();
 			StudentFormObjects.studenthavea504(driver).click();
@@ -79,7 +79,10 @@ public class StudentFormFill extends CommonBase {
 			PaymentObjects.cvv(driver).sendKeys(dataInt.getCVV());
 			Thread.sleep(2000);
 			PaymentObjects.paynow(driver).click();
-			
+			Thread.sleep(5000);
+			StudentFormObjects.nameofparent(driver).click();
+			Thread.sleep(1000);
+			StudentFormObjects.studentdetails(driver).click();
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);

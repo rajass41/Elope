@@ -1,9 +1,7 @@
 package com.ep.pagefactory;
 
-//import org.apache.regexp.recompile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import com.ep.utilities.PropertiesFileReader;
 
 
@@ -26,7 +24,9 @@ public class DriverHome extends CommonBase {
 		super(url, "test");
 
 	}
-	
+	public ParentRegistration getSignup(){
+		return PageFactory.initElements(driver, ParentRegistration.class);
+	}
 	
 	public Login getLogin(){
 		return PageFactory.initElements(driver, Login.class);
@@ -34,6 +34,21 @@ public class DriverHome extends CommonBase {
 	
 	public StudentFormFill getformfill(){
 		return PageFactory.initElements(driver, StudentFormFill.class);
+	}
+	
+	public StudentWaitingListForm getWaitingListForm(){
+		return PageFactory.initElements(driver, StudentWaitingListForm.class);
+	}
+	public ContactUs getcontact(){
+		return PageFactory.initElements(driver, ContactUs.class);
+	}
+	
+	public ForgotPassword getpswd(){
+		return PageFactory.initElements(driver, ForgotPassword.class);
+	}
+	
+	public ChangePassword getcpswd(){
+		return PageFactory.initElements(driver, ChangePassword.class);
 	}
 }
 

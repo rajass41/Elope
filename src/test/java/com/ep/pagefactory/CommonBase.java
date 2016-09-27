@@ -77,7 +77,7 @@ public class CommonBase {
 	public static WebDriver driver;
 	public static WebElement webelement = null;
 	public Screen s = new Screen();
-	public String serverpath="C:\\Program Files (x86)\\Microsoft Web Driver\\MicrosoftWebDriver.exe";
+	//public String serverpath="C:\\Program Files (x86)\\Microsoft Web Driver\\MicrosoftWebDriver.exe";
 	
 	// CommonBase File
 	
@@ -359,13 +359,13 @@ public class CommonBase {
 	}
 	
 
-	public void mouseOver(WebElement parentElement, WebElement childElement)
-			throws Exception {
+	public void mouseOver(WebElement parentElement, WebElement childElement)throws Exception {
+			
 		LOG.info("Inside the Mouse Over Method");
 		Actions action = new Actions(driver);
 		Thread.sleep(2000);
 		action.moveToElement(parentElement).perform();
-		// Thread.sleep(1000)
+		Thread.sleep(1000);
 		action.moveToElement(childElement).perform();
 
 	}
@@ -373,7 +373,6 @@ public class CommonBase {
 	
 	public boolean checkAlert() {
 		try {
-
 			str = driver.switchTo().alert().getText();
 			driver.switchTo().alert().accept();
 			return true;
