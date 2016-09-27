@@ -4,10 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-
 import java.util.Date;
-
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
@@ -27,6 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * This Class is having all the methods to work with xlsx file
  */
+
 public class Xls_Reader {
 	public static final Logger LOG = Logger.getLogger(Xls_Reader.class);
 	public  String path;
@@ -400,7 +398,7 @@ public class Xls_Reader {
 		
 	}
 	
-	/*// removes a column and all the contents
+	// removes a column and all the contents
 	public boolean removeColumn(String sheetName, int colNum) {
 		try{
 		if(!isSheetExist(sheetName))
@@ -435,7 +433,8 @@ public class Xls_Reader {
 		}
 		return true;
 		
-	}*/
+	}
+	
   // find whether sheets exists	
 	public boolean isSheetExist(String sheetName){
 		int index = workbook.getSheetIndex(sheetName);
@@ -513,8 +512,7 @@ public class Xls_Reader {
 		   String s = formatter.format(tomorrow);
 		return s;
 
-		}
-	
+		}	
 	
 	
 }
