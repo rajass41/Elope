@@ -1,4 +1,5 @@
 package com.ep.utilities;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -11,6 +12,7 @@ import java.util.Properties;
  * 
  * 
  */
+
 public class PropertiesFileReader {
 	
 	private static PropertiesFileReader INSTANCE = null;
@@ -24,9 +26,7 @@ public class PropertiesFileReader {
 		try {
 		    in = PropertiesFileReader.class.getResourceAsStream("/resources/"+PROP_FILE);
 			properties.load(in);
-		
-		
-		} catch (IOException e) {
+		   }catch (IOException e) {
 			e.printStackTrace();
 		}	
 	}
@@ -46,7 +46,6 @@ public class PropertiesFileReader {
 		try {
 			if(null != name){
 			in = properties.getClass().getResourceAsStream("/resources/"+name);
-			
 			properties.load(in);
 			}
 		} catch (IOException e) {
@@ -62,6 +61,7 @@ public class PropertiesFileReader {
 		// True If Key Is Not Null And Not Empty
 		if(null != key && !"".equalsIgnoreCase(key)){
 			value = (String)properties.get(key);
+			//System.out.println(value);
 		}
 		return value;
 	}
