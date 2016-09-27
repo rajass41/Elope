@@ -19,8 +19,14 @@ public class StudentFormObjects extends CommonBase {
 	
 	public static WebElement beforeandafter(WebDriver driver){
 		webelement = driver.findElement(By.xpath("html/body/div[1]/section[1]/div/div/div/div/form/div/div[2]/div/div/div[1]/div/div[3]/input"));
-        return webelement;
+        return webelement;                        
         }
+	
+	public static WebElement beforeonly(WebDriver driver){
+		webelement = driver.findElement(By.xpath("/html/body/div[1]/section[1]/div/div/div/div/form/div/div[2]/div/div/div[1]/div/div[1]/input"));
+        return webelement;                        
+        }
+	
 	
 	public static WebElement schoolname(WebDriver driver){
 		webelement = driver.findElement(By.xpath("html/body/div[1]/section[1]/div/div/div/div/form/div/div[2]/div/div/div[2]/div[1]/select"));
@@ -185,5 +191,12 @@ public class StudentFormObjects extends CommonBase {
         return webelement;
         }
 	
-	
+	public static WebElement nameofparent(WebDriver driver){
+		webelement = driver.findElement(By.cssSelector("span.username"));
+        return webelement;
+        }
+        public static WebElement studentdetails(WebDriver driver){
+    		webelement = driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div/div[1]/ul/li/ul/li[3]/a"));
+            return webelement;
+            }
 }
