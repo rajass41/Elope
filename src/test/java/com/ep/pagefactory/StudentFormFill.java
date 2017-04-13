@@ -16,7 +16,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 	
 	
 
-	public void newformfill(DataInt dataInt) throws Exception {
+	public void studentinfo(DataInt dataInt) throws Exception {
 		try {
 			waitForSeconds(8);
 			Newstudentform.click();
@@ -48,6 +48,17 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			NoDoesthestudenthaveanIEP.click();
 			waitForSeconds(1);
 			NoDoesthestudentusemedicalequipment.click();
+			
+			} catch (Exception e) {
+				excep = e.toString();
+				Assert.fail(excep);
+
+			}
+		}
+			
+			
+	public void legalparentorguardian(DataInt dataInt) throws Exception {
+		try {
 			waitForSeconds(1);
 			Parentaddress.sendKeys(dataInt.getParentaddress());
 			Zip.sendKeys(dataInt.getZip());
@@ -63,6 +74,15 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			EmailAddress1.sendKeys(dataInt.getEmailAddress1());
 			Parentemployer1.sendKeys(dataInt.getParentemployer1());
 			Telephone1.sendKeys(dataInt.getTelephone1());
+		} catch (Exception e) {
+			excep = e.toString();
+			Assert.fail(excep);
+
+		}
+	}
+	
+	public void emergencyContacts(DataInt dataInt) throws Exception {
+		try {
 			Name.sendKeys(dataInt.getName());
 			Relationtochild.sendKeys(dataInt.getRelationtochild());
 			Cell2.sendKeys(dataInt.getCell2());
@@ -71,6 +91,15 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			Relationtochild1.sendKeys(dataInt.getRelationtochild1());
 			Cell3.sendKeys(dataInt.getCell3());
 			EmailAddress3.sendKeys(dataInt.getEmailAddress3());
+			
+		} catch (Exception e) {
+			excep = e.toString();
+			Assert.fail(excep);
+
+		}
+	}
+	public void pickupafterschool(DataInt dataInt) throws Exception {
+		try {	
 			Pickupname.sendKeys(dataInt.getPickupname1());
 			PickuppersonTelephone1.sendKeys(dataInt.getPickuppersonTelephone1());
 			Pickupname2.sendKeys(dataInt.getPickupname2());
@@ -89,6 +118,14 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			PickuppersonTelephone8.sendKeys(dataInt.getPickuppersonTelephone8());				
 			Pickupname9.sendKeys(dataInt.getPickupname9());
 			PickuppersonTelephone9.sendKeys(dataInt.getPickuppersonTelephone9());
+		} catch (Exception e) {
+			excep = e.toString();
+			Assert.fail(excep);
+
+		}
+	}	
+	public void medicalConditions(DataInt dataInt) throws Exception {
+		try {	
 			waitForSeconds(3);
 			browsername();
 			waitForSeconds(1);
@@ -97,6 +134,15 @@ public class StudentFormFill extends StudebtFormPageObjects {
 				waitForSeconds(3);}
 			Noknownhealthproblems.click();
 			waitForSeconds(2);
+			
+		} catch (Exception e) {
+			excep = e.toString();
+			Assert.fail(excep);
+
+		}
+	}
+	public void signatureanddate(DataInt dataInt) throws Exception {
+		try {
 			Parentorgurdain.sendKeys(dataInt.getParentorGuardian());
 			browsername();
 			waitForSeconds(1);
@@ -116,7 +162,6 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			TermsandConditions.click();
 			waitForSeconds(3);
 			Submit.click();
-			
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
@@ -125,7 +170,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 	}
 	
 	
-	public void Payment(DataInt dataInt) throws Exception {
+	public void payment(DataInt dataInt) throws Exception {
 		try {
 			waitForSeconds(8);
 			Cardtype.sendKeys(dataInt.getCardtype());
