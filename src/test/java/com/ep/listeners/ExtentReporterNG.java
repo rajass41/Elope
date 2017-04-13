@@ -32,7 +32,9 @@ public class ExtentReporterNG implements IReporter {
             }
         }
 
-        extent.flush();
+        extent.flush();//Once your session is complete and you are ready to write all logs to the report, simply call the flush() method.
+        extent.close();
+       
     }
 
     private void buildTestNodes(IResultMap tests, LogStatus status) {
@@ -49,7 +51,9 @@ public class ExtentReporterNG implements IReporter {
 
                 test.log(status, message);
 
-                extent.endTest(test);
+                extent.endTest(test);// To end, simply call endTest(testInstance).
+
+
             }
         }
     }

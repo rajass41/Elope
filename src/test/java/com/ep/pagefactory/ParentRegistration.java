@@ -1,34 +1,40 @@
 package com.ep.pagefactory;
 
 import junit.framework.Assert;
-
 import org.openqa.selenium.WebDriver;
-
 import com.ep.datainitialization.DataInt;
-import com.ep.pageobjects.RegistrationObjects;
+import com.ep.pageobjects.SignupPageObjects;
 
 
-public class ParentRegistration extends CommonBase{
+
+public class ParentRegistration extends SignupPageObjects{
 
 	public ParentRegistration(WebDriver driver) {
 		super(driver);
 	}
 
-	public void accountregister(DataInt dataInt) throws Exception {
+	public void accountregisteristration(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(6000);
-			RegistrationObjects.btnregister(driver).click();
-			Thread.sleep(4000);
-			RegistrationObjects.Firstname(driver).sendKeys(dataInt.getFirstName());
-			RegistrationObjects.Lastname(driver).sendKeys(dataInt.getLastName());
-			RegistrationObjects.address(driver).sendKeys(dataInt.getAddress1());
-			RegistrationObjects.phone(driver).sendKeys(dataInt.getPhonenumber());
-			RegistrationObjects.email(driver).sendKeys(dataInt.getEmailAddress());
-			RegistrationObjects.Password(driver).sendKeys(dataInt.getPassword());
-			RegistrationObjects.Confirmpassword(driver).sendKeys(dataInt.getPassword());
-			RegistrationObjects.City(driver).sendKeys(dataInt.getCity());
-			RegistrationObjects.Zipcode(driver).sendKeys(dataInt.getZipCode());
-			//RegistrationObjects.register(driver).click();
+			waitForSeconds(6);
+			Parentregister.click();
+			waitForSeconds(6);
+			Firstname.sendKeys(dataInt.getFirstName());
+			Lastname.sendKeys(dataInt.getLastName());
+			Address1.sendKeys(dataInt.getAddress1());
+			Address2.sendKeys(dataInt.getAddress2());
+			Phonenumber.sendKeys(dataInt.getPhonenumber());
+			Signupemail.sendKeys(gettingEmailrandomly());
+			System.out.println(gettingEmailrandomly());
+		    Password.sendKeys(dataInt.getPassword());
+			Confirmpassword.sendKeys(dataInt.getPassword());
+			City.sendKeys(dataInt.getCity());
+			Zipcode.sendKeys(dataInt.getZipcode());
+			waitForSeconds(2);
+			Pictures.click();
+			waitForSeconds(3);
+			Assert.assertTrue(driver.getTitle().contains("Parent Registration"));
+			//Register.click();
+			
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);

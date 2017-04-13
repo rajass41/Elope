@@ -19,6 +19,7 @@ import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
@@ -35,6 +36,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -45,6 +47,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -53,6 +56,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 
 import com.ep.utilities.PropertiesFileReader;
+import com.ep.pagefactory.CommonBase;
+
 
 
 /**
@@ -73,11 +78,13 @@ public class CommonBase {
 	public String snum;
 	public String excep;
 	public String order;
+	public String today;
+	public String randomemail;
 	public static Properties CONFIG = null;
 	public static WebDriver driver;
 	public static WebElement webelement = null;
 	public Screen s = new Screen();
-	//public String serverpath="C:\\Program Files (x86)\\Microsoft Web Driver\\MicrosoftWebDriver.exe";
+	
 	
 	// CommonBase File
 	
@@ -86,8 +93,8 @@ public class CommonBase {
 	protected String url = null;
 	protected String browser;
 	
-	public final int elementTimeOut = Integer.parseInt(PropertiesFileReader.getproperty("element.time.out"));
-	public int windowTimeOut = Integer.parseInt(PropertiesFileReader.getproperty("window.time.out"));
+	public final int elementTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("element.time.out"));
+	public int windowTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("window.time.out"));
 			
 
 	public static final Logger LOG = Logger.getLogger(CommonBase.class);
@@ -122,7 +129,8 @@ public class CommonBase {
 	
 
 	public WebDriver initDriver(String url, String browser) throws Exception {
-		if (browser.equalsIgnoreCase("IE")|| browser.equalsIgnoreCase("internet explorer")) {
+		
+		if (browser.equalsIgnoreCase("ie")|| browser.equalsIgnoreCase("internet explorer")) {
 			// Create the DesiredCapability object of InternetExplorer
 			DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 			// Setting this capability will make your tests unstable and hard to debug.
@@ -130,6 +138,7 @@ public class CommonBase {
 			//This will move the mouse pointer to the location where the operation is being performed on screen.
 			capabilities.setCapability("requireWindowFocus", true);
 			capabilities.setCapability("enablePersistentHover", false);
+			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 			System.setProperty(
 					"webdriver.ie.driver",
 					System.getProperty("user.dir")
@@ -138,21 +147,27 @@ public class CommonBase {
 							+ System.getProperty("file.separator")
 							+ "IEDriverServer.exe");
 			driver = new InternetExplorerDriver(capabilities);
+			//driver.manage().window().setSize(new Dimension(1024,768));
 			driver.get(url);
 
 		} else if (browser.equalsIgnoreCase("firefox")||browser.equalsIgnoreCase("mozilla")||browser.equalsIgnoreCase("mozilla firefox")) {
+			
+			/*DesiredCapabilities capabilities=DesiredCapabilities.firefox();
+			capabilities.setCapability("marionette", false);
 			System.setProperty(
 					"webdriver.gecko.driver",
 					System.getProperty("user.dir")
 							+ System.getProperty("file.separator")
 							+ "BrowserDrivers"
 							+ System.getProperty("file.separator")
-							+ "geckodriver.exe");
+							+ "geckodriver.exe");*/
 			
 			driver = new FirefoxDriver(FirefoxDriverProfile());
 			driver.get(url);
 
 		} else if (browser.equalsIgnoreCase("chrome")||browser.equalsIgnoreCase("google chrome")) {
+			DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome () ;      
+			handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
 			System.setProperty(
 					"webdriver.chrome.driver",
 					System.getProperty("user.dir")
@@ -186,9 +201,9 @@ public class CommonBase {
 			driver = new EdgeDriver();
 			driver.get(url);
 			          	
-		}else {
+		}/*else {
 			throw new IllegalArgumentException("The Browser Type is Undefined");
-		}
+		}*/
      	driver.manage().window().maximize();
 		return driver;
 	}
@@ -214,6 +229,8 @@ public class CommonBase {
 		profile.setPreference("browser.download.manager.useWindow", false);
 		profile.setPreference("browser.download.manager.showAlertOnComplete",false);
 		profile.setPreference("browser.download.manager.closeWhenDone", false);
+		profile.setAcceptUntrustedCertificates(true);
+		profile.setAssumeUntrustedCertificateIssuer(false);
 		
 		/*profile.setPreference("javascript.enabled", true);
 		profile.setPreference("dom.max_chrome_script_run_time", 0);
@@ -273,7 +290,7 @@ public class CommonBase {
 
 	public void scrollPage() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
-		Thread.sleep(3000);
+		waitForSeconds(3);
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(500,0)");
 
 	}
@@ -314,6 +331,18 @@ public class CommonBase {
 					+ by.getClass());
 		}
 
+	}
+	
+	
+	public static void waitForSeconds(int Sec){
+		
+		long start = System.currentTimeMillis();//returns the current time in milliseconds
+		//System.out.println("stsrt Time "+start);
+		long stop = start+Sec*1000;
+		//System.out.println("Stop Time "+stop);
+		while(System.currentTimeMillis()<stop){
+			
+		}		
 	}
 	
 	
@@ -363,9 +392,9 @@ public class CommonBase {
 			
 		LOG.info("Inside the Mouse Over Method");
 		Actions action = new Actions(driver);
-		Thread.sleep(2000);
+		waitForSeconds(2);
 		action.moveToElement(parentElement).perform();
-		Thread.sleep(1000);
+		waitForSeconds(1);
 		action.moveToElement(childElement).perform();
 
 	}
@@ -392,15 +421,16 @@ public class CommonBase {
 		LOG.info("BrowserName is" + browserName);
 		String os = cap.getPlatform().toString();
 		LOG.info("OS is" + os);
-		String v = cap.getVersion().toString();
-		LOG.info("OS version is" + v);
+		String ver = cap.getVersion().toString();
+		LOG.info("OS version is" + ver);
 
 	}
 
 	
 	public String gettimestamp() {
-		timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss")	.format(new Date());
+		timeStamp = new SimpleDateFormat("MM/dd/YYYY").format(new Date());
 		LOG.info("TimeStamp" + timeStamp);
+		
 		return timeStamp;
 	}
 
@@ -502,6 +532,8 @@ public class CommonBase {
 	  
 	 private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
 		 System.out.println("Waiting for generating report....");
+		 System.setProperty("javax.net.ssl.trustStore", "C://Program Files//Java//jre1.8.0_101//lib//security//cacerts");
+		 System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 		 Properties props = System.getProperties();		 
 		 String host = "smtp.gmail.com";
 	     props.put("mail.smtp.starttls.enable", "true");
@@ -513,7 +545,14 @@ public class CommonBase {
 	     props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");   
 	     props.put("mail.smtp.auth", "true");  
 	     props.put("mail.smtp.port", "465");  
-		 Session session = Session.getDefaultInstance(props);			 
+		 Session session = Session.getDefaultInstance(props,new javax.mail.Authenticator() {
+			 
+				protected PasswordAuthentication getPasswordAuthentication() {
+
+				return new PasswordAuthentication("from","pass");
+
+				}
+			});			 
 		 MimeMessage message = new MimeMessage(session);
 		 
 		try {
@@ -527,14 +566,9 @@ public class CommonBase {
 			 objMessageBodyPart.setText("Hi,"
 			 		+ "\n"
 			 		+ "\n"
-			 		+ "    Please Find The Attached Automation Report File dowlnload and then open it!"
+			 		+ "      Please Find The Attached Automation Report File download and then open it!"
 			 		+ "\n"
-			 		+ "\n"
-			 		+ "\n"
-			 		+"Thanks&Regards"
-			 		+"\n"
-			 		+"\n"
-			 		+"Manikanta");
+			 		+ "\n");
 			 Multipart multipart = new MimeMultipart();
 			 multipart.addBodyPart(objMessageBodyPart);
 			 objMessageBodyPart = new MimeBodyPart();
@@ -564,13 +598,13 @@ public class CommonBase {
 	//------------System Present Date select ------//
 		
 		
-			public static void systemdateselect(){
+			public void  systemdateselect(){
 				
 				try {
 					DateFormat dateformat = new SimpleDateFormat("d"); //date format
 		            Date date = new Date();					
-		            String today = dateformat.format(date);   
-		            WebElement dateWidget = driver.findElement(By.xpath("//*[@id='ui-datepicker-div']")); //find the calendar
+		            today = dateformat.format(date);   
+		            WebElement dateWidget = driver.findElement(By.id("ui-datepicker-div")); //find the calendar
 		            List<WebElement> columns=dateWidget.findElements(By.tagName("td"));  
 		            //comparing the text of cell with today's date and clicking it.
 		            for (WebElement cell : columns)
@@ -584,6 +618,90 @@ public class CommonBase {
 				} catch (Exception e) {
 					
 				}
+				
 			}
+			
+			
+			
+	public static void scrollTo(WebDriver driver, WebElement element) {
+		   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);          
+		    }
+			
+			
+	//----------------Program to generate Random Email for signup-------------------
+	
+			public static enum ModeEmail {
+				
+				ALPHA, NUMERIC
+			}
+
+			public static String generateRandomStringemail(int length, ModeEmail alpha)throws Exception {
+					
+
+				StringBuffer buffer = new StringBuffer();
+				String characters = "";
+
+				switch (alpha) {
+
+				case ALPHA:
+					characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+					break;
+
+				case NUMERIC:
+					characters = "1234567890";
+					break;
+				}
+
+				int charactersLength = characters.length();
+
+				for (int i = 0; i < length; i++) {
+					double index = Math.random() * charactersLength;
+					buffer.append(characters.charAt((int) index));
+				}
+				return buffer.toString();
+			}
+
+			public String gettingEmailrandomly() throws Exception {
+				
+				for (int i = 0; i < 1; i++) {
+					String alpha = CommonBase.generateRandomStringemail(6, CommonBase.ModeEmail.ALPHA);
+					String numeric = CommonBase.generateRandomStringemail(2, CommonBase.ModeEmail.NUMERIC);
+					//String alpha2 = CommonBase.generateRandomStringemail(1, CommonBase.ModeEmail.ALPHA);
+					//String numeric1 = CommonBase.generateRandomStringemail(2,CommonBase.ModeEmail.NUMERIC);		
+					//String alpha3 = CommonBase.generateRandomStringemail(1, CommonBase.ModeEmail.ALPHA);
+					//String numeric2 = CommonBase.generateRandomStringemail(3,CommonBase.ModeEmail.NUMERIC);
+					//String alpha4 = CommonBase.generateRandomStringemail(1, CommonBase.ModeEmail.ALPHA);
+					//randomemail = alpha.concat(numeric).concat(alpha2).concat(numeric1).concat(alpha3).concat(numeric2).concat(alpha4).concat("@gmail.com");
+					randomemail=alpha.concat(numeric).concat("@gmail.com");
+							
+				}
+				return randomemail;
+			}			
+	
+
+			//-- Program to Drag and Drop--//
+			
+			
+			public void dragAndDrop(WebElement sourceElement, WebElement destinationElement) {
+				try {
+					if (sourceElement.isDisplayed() && destinationElement.isDisplayed()) {
+						Actions action = new Actions(driver);
+						action.dragAndDrop(sourceElement, destinationElement).build().perform();
+					} else {
+						System.out.println("Element was not displayed to drag");
+					}
+				} catch (StaleElementReferenceException e) {
+					System.out.println("Element with " + sourceElement + "or" + destinationElement + "is not attached to the page document "
+							+ e.getStackTrace());
+				} catch (NoSuchElementException e) {
+					System.out.println("Element " + sourceElement + "or" + destinationElement + " was not found in DOM "+ e.getStackTrace());
+				} catch (Exception e) {
+					System.out.println("Error occurred while performing drag and drop operation "+ e.getStackTrace());
+				}
+			}
+			
+			
+			
+			
 	
 	}

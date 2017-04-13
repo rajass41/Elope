@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [SP_Automation]">
+<suite verbose="0" name="Failed suite [EP_Automation]">
   <parameter name="browser" value="chrome"/>
   <listeners>
-    <listener class-name="com.sp.listeners.TestListener"/>
+    <listener class-name="com.ep.listeners.TestListener"/>
+    <listener class-name="com.ep.listeners.ExtentReporterNG"/>
   </listeners>
-  <test name="SP_Automation(failed)">
+  <test name="EP_Automation(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.sp.testscripts.SampleTestSuite">
+      <class name="com.ep.testscripts.TestSuite">
         <methods>
-          <include name="Login" invocation-numbers="0"/>
+          <include name="SignupProcess" invocation-numbers="0 0 0 0"/>
+          <include name="close"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.sp.testscripts.SampleTestSuite -->
+      </class> <!-- com.ep.testscripts.TestSuite -->
     </classes>
-  </test> <!-- SP_Automation(failed) -->
-</suite> <!-- Failed suite [SP_Automation] -->
+  </test> <!-- EP_Automation(failed) -->
+</suite> <!-- Failed suite [EP_Automation] -->

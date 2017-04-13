@@ -1,13 +1,13 @@
 package com.ep.pagefactory;
 
 import junit.framework.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 import com.ep.datainitialization.DataInt;
-import com.ep.pageobjects.ContactUsObjects;
+import com.ep.pageobjects.ContactUsPageObjects;
 
 
-public class ContactUs extends CommonBase{
+public class ContactUs extends ContactUsPageObjects{
 
 	public ContactUs(WebDriver driver) {
 		super(driver);
@@ -16,23 +16,28 @@ public class ContactUs extends CommonBase{
 	
 	public void contactformfilling(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(4000);
-			ContactUsObjects.contact(driver).click();
-			Thread.sleep(3000);
-			ContactUsObjects.Firstname(driver).sendKeys(dataInt.getFname());
-			ContactUsObjects.Lastname(driver).sendKeys(dataInt.getLname());
-			ContactUsObjects.emailid(driver).sendKeys(dataInt.getMailid());
-			ContactUsObjects.ph(driver).sendKeys(dataInt.getPh());
-			ContactUsObjects.Company(driver).sendKeys(dataInt.getCompany());
-			ContactUsObjects.City(driver).sendKeys(dataInt.getCity());
-			new Select(ContactUsObjects.State(driver)).selectByVisibleText("TN");
-			Thread.sleep(1000);
-			ContactUsObjects.Zip(driver).sendKeys(dataInt.getZipCode());
-			Thread.sleep(1000);
-			ContactUsObjects.comments(driver).sendKeys(dataInt.getComments());
-			Thread.sleep(2000);
-			ContactUsObjects.submit(driver).click();
-			Thread.sleep(4000);
+			waitForSeconds(4);
+			Contact.click();
+			waitForSeconds(5);
+			ContactFirstName.sendKeys(dataInt.getContactFirstName());
+			browsername();
+			if (browserName.equalsIgnoreCase("internet explorer")) {
+				((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-200)","");
+				waitForSeconds(3);}
+			ContactLastName.sendKeys(dataInt.getContactLastName());
+			Contactemail.sendKeys(dataInt.getContactemail());
+			Contactphone.sendKeys(dataInt.getContactphone());
+			Schoolname.sendKeys(dataInt.getSchoolname());
+			Chlidname.sendKeys(dataInt.getChlidname());
+			waitForSeconds(1);
+			Comments.sendKeys(dataInt.getComments());
+			waitForSeconds(3);
+			browsername();
+			if (browserName.equalsIgnoreCase("firefox")) {
+				((JavascriptExecutor) driver).executeScript("window.scrollBy(0,100)","");
+				waitForSeconds(3);}
+			submitbtn.click();
+			waitForSeconds(5);
 			super.checkAlert();
 			
 		
@@ -41,8 +46,5 @@ public class ContactUs extends CommonBase{
 			Assert.fail(excep);
 
 		}
-	}	
-	
-	
-	
+	}		
 }

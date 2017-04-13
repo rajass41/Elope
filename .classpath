@@ -34,10 +34,11 @@
 	<classpathentry kind="lib" path="E:/jars/testng-6.8.5.jar"/>
 	<classpathentry kind="lib" path="E:/jars/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="E:/jars/mysql-connector.jar"/>
+	<classpathentry kind="lib" path="E:/jars/extentreports-java-2.02.jar"/>
+	<classpathentry kind="lib" path="E:/jars/extentreports-2.41.0.jar"/>
+	<classpathentry kind="lib" path="E:/jars/New folder/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="E:/jars/New folder/mail-1.4.jar"/>
 	<classpathentry kind="lib" path="E:/jars/selenium-java-2.53.1.jar"/>
 	<classpathentry kind="lib" path="E:/jars/selenium-server-standalone-2.53.1.jar"/>
-	<classpathentry kind="lib" path="E:/jars/New folder/activation.jar"/>
-	<classpathentry kind="lib" path="E:/jars/New folder/mail.jar"/>
-	<classpathentry kind="lib" path="E:/jars/extentreports-java-2.02.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,65 +1,121 @@
 package com.ep.pagefactory;
 
-import junit.framework.Assert;
 
+import junit.framework.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import com.ep.datainitialization.DataInt;
-import com.ep.pageobjects.PaymentObjects;
-import com.ep.pageobjects.StudentFormObjects;
+import com.ep.pageobjects.StudebtFormPageObjects;
 
-
-public class StudentFormFill extends CommonBase {
-
+public class StudentFormFill extends StudebtFormPageObjects {
+	
 	public StudentFormFill(WebDriver driver) {
 		super(driver);
 	}
 	
+	
 
 	public void newformfill(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(8000);
-			StudentFormObjects.newstudentform(driver).click();
-			Thread.sleep(5000);
-			StudentFormObjects.beforeandafter(driver).click();
-			Thread.sleep(2000);
-			new Select(StudentFormObjects.schoolname(driver)).selectByVisibleText("Balmoral Ridgeway Elementary");
-			Thread.sleep(2000);
-			StudentFormObjects.lastname(driver).sendKeys(dataInt.getLastname());
-			StudentFormObjects.firsttname(driver).sendKeys(dataInt.getFirstname());
-			StudentFormObjects.middletname(driver).sendKeys(dataInt.getMiddlename());
-			StudentFormObjects.ssn(driver).sendKeys(dataInt.getSSN());
-			StudentFormObjects.grade(driver).sendKeys(dataInt.getGrade());
-			StudentFormObjects.studentId(driver).sendKeys(dataInt.getStudentid());
-			StudentFormObjects.dateofbirth(driver).sendKeys(dataInt.getDOB());
-			Thread.sleep(2000);
-			StudentFormObjects.gender(driver).click();
-			StudentFormObjects.ImmunizationRecordatSchool(driver).click();
-			StudentFormObjects.studenthavea504(driver).click();
-			StudentFormObjects.IEP(driver).click();
-			StudentFormObjects.medical(driver).click();
-			StudentFormObjects.adress(driver).sendKeys(dataInt.getAddress());
-			StudentFormObjects.zip(driver).sendKeys(dataInt.getZip());
-			StudentFormObjects.home(driver).sendKeys(dataInt.getHome());
-			StudentFormObjects.cell(driver).sendKeys(dataInt.getCell());
-			StudentFormObjects.email(driver).sendKeys(dataInt.getEmailaddress());
-			StudentFormObjects.parentemployee(driver).sendKeys(dataInt.getParentemployer());
-			StudentFormObjects.telephone(driver).sendKeys(dataInt.getTelephone());
-			StudentFormObjects.name(driver).sendKeys(dataInt.getName());
-			StudentFormObjects.relationtochild(driver).sendKeys(dataInt.getRelationtochild());
-			StudentFormObjects.cell1(driver).sendKeys(dataInt.getCell());
-			StudentFormObjects.email1(driver).sendKeys(dataInt.getEmailaddress());
-			StudentFormObjects.pickuppersonname(driver).sendKeys(dataInt.getName());
-			StudentFormObjects.telephone1(driver).sendKeys(dataInt.getTelephone());
-			StudentFormObjects.medicalcondition(driver).click();
-			StudentFormObjects.parentorgurdain(driver).sendKeys(dataInt.getParentorGuardian());
-			StudentFormObjects.signature(driver).sendKeys(dataInt.getSignatureLegalParentorGuardian());
-			StudentFormObjects.date(driver).click();
-			Thread.sleep(1000);
-			super.systemdateselect();
-			StudentFormObjects.terms(driver).click();
-			Thread.sleep(3000);
-			StudentFormObjects.submit(driver).click();
+			waitForSeconds(8);
+			Newstudentform.click();
+			waitForSeconds(5);
+			BeforeONLY.click();
+			waitForSeconds(3);
+			new Select(Schoolname).selectByVisibleText("Kate Bond Middle");
+			waitForSeconds(2);
+			Lastname.sendKeys(dataInt.getLastname());
+			Firsttname.sendKeys(dataInt.getFirstname());
+			Middletname.sendKeys(dataInt.getMiddlename());
+			StateId.sendKeys(dataInt.getStateid());
+			Grade.sendKeys(dataInt.getGrade());
+			browsername();
+			waitForSeconds(1);
+			if(browserName.equalsIgnoreCase("firefox")){
+				((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)","");
+			waitForSeconds(2);}
+			Dateofbirth.click();
+			systemdateselect();
+			waitForSeconds(3);
+			waitForSeconds(1);
+			Gender.click();
+			waitForSeconds(1);
+			YesImmunizationRecordatSchool.click();
+			waitForSeconds(1);
+			NoDoesthestudenthavea504.click();
+			waitForSeconds(1);
+			NoDoesthestudenthaveanIEP.click();
+			waitForSeconds(1);
+			NoDoesthestudentusemedicalequipment.click();
+			waitForSeconds(1);
+			Parentaddress.sendKeys(dataInt.getParentaddress());
+			Zip.sendKeys(dataInt.getZip());
+			Home.sendKeys(dataInt.getHome());
+			cell.sendKeys(dataInt.getCell());
+			EmailAddress.sendKeys(dataInt.getEmailAddress());
+			Parentemployer.sendKeys(dataInt.getParentemployer());
+			Telephone.sendKeys(dataInt.getTelephone());
+			Parentaddress1.sendKeys(dataInt.getParentaddress1());
+			Zip1.sendKeys(dataInt.getZip1());
+			Home1.sendKeys(dataInt.getHome1());
+			Cell1.sendKeys(dataInt.getCell1());
+			EmailAddress1.sendKeys(dataInt.getEmailAddress1());
+			Parentemployer1.sendKeys(dataInt.getParentemployer1());
+			Telephone1.sendKeys(dataInt.getTelephone1());
+			Name.sendKeys(dataInt.getName());
+			Relationtochild.sendKeys(dataInt.getRelationtochild());
+			Cell2.sendKeys(dataInt.getCell2());
+			EmailAddress2.sendKeys(dataInt.getEmailAddress2());
+			Name1.sendKeys(dataInt.getName1());
+			Relationtochild1.sendKeys(dataInt.getRelationtochild1());
+			Cell3.sendKeys(dataInt.getCell3());
+			EmailAddress3.sendKeys(dataInt.getEmailAddress3());
+			Pickupname.sendKeys(dataInt.getPickupname1());
+			PickuppersonTelephone1.sendKeys(dataInt.getPickuppersonTelephone1());
+			Pickupname2.sendKeys(dataInt.getPickupname2());
+			PickuppersonTelephone2.sendKeys(dataInt.getPickuppersonTelephone2());
+			Pickupname3.sendKeys(dataInt.getPickupname3());
+			PickuppersonTelephone3.sendKeys(dataInt.getPickuppersonTelephone3());
+			Pickupname4.sendKeys(dataInt.getPickupname4());
+			PickuppersonTelephone4.sendKeys(dataInt.getPickuppersonTelephone4());
+			Pickupname5.sendKeys(dataInt.getPickupname5());
+			PickuppersonTelephone5.sendKeys(dataInt.getPickuppersonTelephone5());
+			Pickupname6.sendKeys(dataInt.getPickupname6());
+			PickuppersonTelephone6.sendKeys(dataInt.getPickuppersonTelephone6());
+			Pickupname7.sendKeys(dataInt.getPickupname7());
+			PickuppersonTelephone7.sendKeys(dataInt.getPickuppersonTelephone7());			
+			Pickupname8.sendKeys(dataInt.getPickupname8());
+			PickuppersonTelephone8.sendKeys(dataInt.getPickuppersonTelephone8());				
+			Pickupname9.sendKeys(dataInt.getPickupname9());
+			PickuppersonTelephone9.sendKeys(dataInt.getPickuppersonTelephone9());
+			waitForSeconds(3);
+			browsername();
+			waitForSeconds(1);
+			if (browserName.equalsIgnoreCase("firefox")|| browserName.equalsIgnoreCase("internet explorer")) {
+				((JavascriptExecutor)driver).executeScript("window.scrollBy(0,350)","");
+				waitForSeconds(3);}
+			Noknownhealthproblems.click();
+			waitForSeconds(2);
+			Parentorgurdain.sendKeys(dataInt.getParentorGuardian());
+			browsername();
+			waitForSeconds(1);
+			if (browserName.equalsIgnoreCase("internet explorer")) {
+				((JavascriptExecutor)driver).executeScript("window.scrollBy(0,-250)","");
+				waitForSeconds(3);}
+			Signature.sendKeys(dataInt.getSignatureLegalParentorGuardian());
+			browsername();
+			waitForSeconds(1);
+			if (browserName.equalsIgnoreCase("firefox")) {
+				((JavascriptExecutor)driver).executeScript("window.scrollBy(0,150)","");
+				waitForSeconds(3);}
+			Date.click();
+			waitForSeconds(2);
+			systemdateselect();
+			waitForSeconds(2);
+			TermsandConditions.click();
+			waitForSeconds(3);
+			Submit.click();
 			
 		} catch (Exception e) {
 			excep = e.toString();
@@ -71,18 +127,19 @@ public class StudentFormFill extends CommonBase {
 	
 	public void Payment(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(8000);
-			PaymentObjects.cardtype(driver).sendKeys(dataInt.getCardtype());
-			PaymentObjects.cardnumber(driver).sendKeys(dataInt.getCardnumber());
-			PaymentObjects.month(driver).sendKeys(dataInt.getMonth());
-			PaymentObjects.year(driver).sendKeys(dataInt.getYear());
-			PaymentObjects.cvv(driver).sendKeys(dataInt.getCVV());
-			Thread.sleep(2000);
-			PaymentObjects.paynow(driver).click();
-			Thread.sleep(5000);
-			StudentFormObjects.nameofparent(driver).click();
-			Thread.sleep(1000);
-			StudentFormObjects.studentdetails(driver).click();
+			waitForSeconds(8);
+			Cardtype.sendKeys(dataInt.getCardtype());
+			Cardnumber.sendKeys(dataInt.getCardnumber());
+			Month.sendKeys(dataInt.getMonth());
+			Year.sendKeys(dataInt.getYear());
+			Cvv.sendKeys(dataInt.getCVV());
+			waitForSeconds(2);
+			Paynow.click();
+			waitForSeconds(7);
+		    Nameofparent.click();
+		    waitForSeconds(1);
+			Studentdetails.click();
+			
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);

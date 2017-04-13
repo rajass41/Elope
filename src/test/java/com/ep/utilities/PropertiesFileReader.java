@@ -56,15 +56,17 @@ public class PropertiesFileReader {
 
 
 	
-	public static String getproperty(String key){
-		String value = null;
-		// True If Key Is Not Null And Not Empty
-		if(null != key && !"".equalsIgnoreCase(key)){
-			value = (String)properties.get(key);
-			//System.out.println(value);
+	public static  String readvalueOfKey(String keyName){
+		 
+			String value = null;
+			// True If keyName Is Not Null And Not Empty
+			if(null != keyName && !"".equalsIgnoreCase(keyName)){
+				value = (String)properties.get(keyName);
+				
+			}
+			return value;
 		}
-		return value;
-	}
+
 
 }
 

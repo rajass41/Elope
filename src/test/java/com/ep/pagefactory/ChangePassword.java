@@ -1,12 +1,12 @@
 package com.ep.pagefactory;
 
 import junit.framework.Assert;
-
 import org.openqa.selenium.WebDriver;
 import com.ep.datainitialization.DataInt;
-import com.ep.pageobjects.ChangePasswordObjects;
+import com.ep.pageobjects.ChangePasswordPageObjects;
 
-public class ChangePassword extends CommonBase{
+
+public class ChangePassword extends ChangePasswordPageObjects{
 
 	public ChangePassword(WebDriver driver) {
 		super(driver);
@@ -16,16 +16,16 @@ public class ChangePassword extends CommonBase{
 	
 	public void changepswd(DataInt dataInt) throws Exception {
 		try {
-			Thread.sleep(9000);
-			ChangePasswordObjects.nameofparent(driver).click();
-			Thread.sleep(1000);
-			ChangePasswordObjects.changepass(driver).click();
-			Thread.sleep(4000);
-			ChangePasswordObjects.CurrentPassword(driver).sendKeys(dataInt.getCurrentPassword());
-			ChangePasswordObjects.NewPassword(driver).sendKeys(dataInt.getNewPassword());
-			ChangePasswordObjects.ConfirmPassword(driver).sendKeys(dataInt.getNewPassword());
-			Thread.sleep(2000);
-			//ChangePasswordObjects.changepass(driver).click();
+			waitForSeconds(6);
+			Nameofparent1.click();
+			waitForSeconds(1);
+			Changepass.click();
+			waitForSeconds(4);
+			CurrentPassword.sendKeys(dataInt.getCurrentPassword());
+			NewPassword.sendKeys(dataInt.getNewPassword());
+			ConfirmPassword.sendKeys(dataInt.getNewPassword());
+			waitForSeconds(2);
+			Changepassword.click();
 			
 			
 			

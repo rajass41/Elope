@@ -14,6 +14,7 @@ import org.testng.ITestResult;
 import com.ep.pagefactory.CommonBase;
 
 public class TestListener implements ITestListener {
+	
 	public String browserName;
 	public WebDriver driver;
 	public String failedscreens = System.getProperty("user.dir") + "_Failed_Screens";
@@ -23,11 +24,10 @@ public class TestListener implements ITestListener {
 
 		try {
 			System.out.println("***** Error " + result.getName()+ " test has failed *****");
-					
 			String methodName = result.getName().toString().trim();
 			takeScreenShot(methodName);
-		} catch (Exception e) {
 			
+		    } catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -35,29 +35,25 @@ public class TestListener implements ITestListener {
 	public void takeScreenShot(String methodName) throws Exception {
 		// get the driver
 
-		CommonBase ypbase = new CommonBase("", "");
-		driver = ypbase.initDriver("", "");
+		CommonBase commonbase = new CommonBase("", "");
+		driver = commonbase.initDriver("", "");
 
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				
 		// The below method will save the screen shot in  drive with test method name
 		
 		try {
-			FileUtils.copyFile(scrFile, new File(failedscreens + File.separator + methodName + "_" + browsername() + ".png"));
-					
-			System.out.println("***Placed screen shot in " + failedscreens + " ***");
-					
-		} catch (IOException e) {
+			FileUtils.copyFile(scrFile, new File(failedscreens + File.separator + methodName + "_" + browsername() + ".png"));	
+			System.out.println("***Placed screen shot in " + failedscreens + " ***");		
+			} catch (IOException e) {
 			e.printStackTrace();
-		}
+		  }
 	}
 
 	public String browsername() {
-
 		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
 		browserName = cap.getBrowserName().toLowerCase();
 		return browserName;
-
 	}
 
 	public void onFinish(ITestContext context) {

@@ -8,7 +8,7 @@ import com.ep.utilities.PropertiesFileReader;
 
 public class DriverHome extends CommonBase {
 	
-	public static final String prod_url = PropertiesFileReader.getproperty("app.url");
+	public static final String prod_url = PropertiesFileReader.readvalueOfKey("app.url");
 			
 
 	public DriverHome(WebDriver driver) {
@@ -43,12 +43,22 @@ public class DriverHome extends CommonBase {
 		return PageFactory.initElements(driver, ContactUs.class);
 	}
 	
+	public ChangePassword getcpswd(){
+		return PageFactory.initElements(driver, ChangePassword.class);
+	}
+	
+	public MyProfile getprofile(){
+		return PageFactory.initElements(driver, MyProfile.class);
+	}
+	
+	public Logout getacclogout (){
+		return PageFactory.initElements(driver, Logout.class);
+	}
 	public ForgotPassword getpswd(){
 		return PageFactory.initElements(driver, ForgotPassword.class);
 	}
 	
-	public ChangePassword getcpswd(){
-		return PageFactory.initElements(driver, ChangePassword.class);
-	}
+	
+	
 }
 
