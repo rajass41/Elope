@@ -8,37 +8,41 @@ import com.ep.pageobjects.SignupPageObjects;
 
 
 public class ParentRegistration extends SignupPageObjects{
-
+	
 	public ParentRegistration(WebDriver driver) {
 		super(driver);
 	}
 
 	public void accountregisteristration(DataInt dataInt) throws Exception {
 		try {
-			waitForSeconds(6);
+			Assert.assertTrue(driver.getTitle().contains("Parent :: Login"));
+			waitForSeconds(5);
 			Parentregister.click();
-			waitForSeconds(6);
+			LOG.info("Parent Registration Starts");
+			waitForSeconds(4);
+			Assert.assertTrue(driver.getTitle().contains("Parent Registration"));
 			Firstname.sendKeys(dataInt.getFirstName());
 			Lastname.sendKeys(dataInt.getLastName());
 			Address1.sendKeys(dataInt.getAddress1());
 			Address2.sendKeys(dataInt.getAddress2());
 			Phonenumber.sendKeys(dataInt.getPhonenumber());
 			Signupemail.sendKeys(gettingEmailrandomly());
-			System.out.println(gettingEmailrandomly());
 		    Password.sendKeys(dataInt.getPassword());
 			Confirmpassword.sendKeys(dataInt.getPassword());
 			City.sendKeys(dataInt.getCity());
 			Zipcode.sendKeys(dataInt.getZipcode());
-			waitForSeconds(2);
+			waitForSeconds(1);
 			Pictures.click();
 			waitForSeconds(3);
-			Assert.assertTrue(driver.getTitle().contains("Parent Registration"));
 			//Register.click();
+			LOG.info("Successfully Parent Registered");
 			
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
+			LOG.info(excep);
 
 		}
-	}		
+	}
+
 }

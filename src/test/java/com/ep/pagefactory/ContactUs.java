@@ -19,6 +19,8 @@ public class ContactUs extends ContactUsPageObjects{
 			waitForSeconds(4);
 			Contact.click();
 			waitForSeconds(5);
+			Assert.assertTrue(driver.getTitle().contains("Contact-Us"));
+			LOG.info("Filling contact information");
 			ContactFirstName.sendKeys(dataInt.getContactFirstName());
 			browsername();
 			if (browserName.equalsIgnoreCase("internet explorer")) {
@@ -39,7 +41,7 @@ public class ContactUs extends ContactUsPageObjects{
 			submitbtn.click();
 			waitForSeconds(5);
 			super.checkAlert();
-			
+			LOG.info("Successfully filled contact details");
 		
 		} catch (Exception e) {
 			excep = e.toString();

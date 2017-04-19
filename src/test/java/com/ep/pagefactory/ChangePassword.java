@@ -21,14 +21,15 @@ public class ChangePassword extends ChangePasswordPageObjects{
 			waitForSeconds(1);
 			Changepass.click();
 			waitForSeconds(4);
+			Assert.assertTrue(driver.getTitle().contains("Change Password"));
+			LOG.info("Entering Current,New,Confirm Passwords");
 			CurrentPassword.sendKeys(dataInt.getCurrentPassword());
 			NewPassword.sendKeys(dataInt.getNewPassword());
 			ConfirmPassword.sendKeys(dataInt.getNewPassword());
 			waitForSeconds(2);
 			Changepassword.click();
-			
-			
-			
+			LOG.info("Password changed successfully");
+		
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);

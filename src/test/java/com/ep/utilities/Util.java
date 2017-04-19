@@ -1,14 +1,14 @@
 package com.ep.utilities;
 
 import java.util.LinkedList;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import com.ep.datainitialization.DataInt;
 
 public class Util {
 
 
 
-public static final Logger LOG = Logger.getLogger(Util.class);
+//public static final Logger LOG = Logger.getLogger(Util.class);
 
 public static LinkedList<Object[]> getSignup(String sheetName1,Xls_Reader xls) {
 	
@@ -46,7 +46,7 @@ public static LinkedList<Object[]> getSignup(String sheetName1,Xls_Reader xls) {
 		}
 
 	} catch (Exception e) {
-		LOG.info(e.toString());
+		//LOG.info(e.toString());
 
 	}
 	return signup;
@@ -83,7 +83,7 @@ public static LinkedList<Object[]> getLoginData(String sheetName1,Xls_Reader xls
 		}
 
 	} catch (Exception e) {
-		LOG.info(e.toString());
+		//LOG.info(e.toString());
 
 	}
 	return logindata;
@@ -182,7 +182,7 @@ public static LinkedList<Object[]> getStudentForm(String sheetName1,Xls_Reader x
 		}
 
 	} catch (Exception e) {
-		LOG.info(e.toString());
+		//LOG.info(e.toString());
 
 	}
 	return studentform;
@@ -225,7 +225,7 @@ public static LinkedList<Object[]> getContactus(String sheetName1,Xls_Reader xls
 		}
 
 	} catch (Exception e) {
-		LOG.info(e.toString());
+		//LOG.info(e.toString());
 
 	}
 	return contactus;
@@ -263,7 +263,7 @@ public static LinkedList<Object[]> getChangePassword(String sheetName1,Xls_Reade
 		}
 
 	} catch (Exception e) {
-		LOG.info(e.toString());
+		//LOG.info(e.toString());
 
 	}
 	return changepassword;

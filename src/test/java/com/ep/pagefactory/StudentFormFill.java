@@ -6,9 +6,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import com.ep.datainitialization.DataInt;
-import com.ep.pageobjects.StudebtFormPageObjects;
+import com.ep.pageobjects.StudentFormPageObjects;
 
-public class StudentFormFill extends StudebtFormPageObjects {
+public class StudentFormFill extends StudentFormPageObjects {
 	
 	public StudentFormFill(WebDriver driver) {
 		super(driver);
@@ -18,13 +18,16 @@ public class StudentFormFill extends StudebtFormPageObjects {
 
 	public void studentinfo(DataInt dataInt) throws Exception {
 		try {
+			Assert.assertTrue(driver.getTitle().contains("Parent Dashboard"));
 			waitForSeconds(8);
 			Newstudentform.click();
 			waitForSeconds(5);
+			Assert.assertTrue(driver.getTitle().contains("StudentApplication"));
 			BeforeONLY.click();
 			waitForSeconds(3);
 			new Select(Schoolname).selectByVisibleText("Kate Bond Middle");
 			waitForSeconds(2);
+			LOG.info("Filling Student Info");
 			Lastname.sendKeys(dataInt.getLastname());
 			Firsttname.sendKeys(dataInt.getFirstname());
 			Middletname.sendKeys(dataInt.getMiddlename());
@@ -48,7 +51,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			NoDoesthestudenthaveanIEP.click();
 			waitForSeconds(1);
 			NoDoesthestudentusemedicalequipment.click();
-			
+			LOG.info("Successfully filled student info details");
 			} catch (Exception e) {
 				excep = e.toString();
 				Assert.fail(excep);
@@ -60,6 +63,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 	public void legalparentorguardian(DataInt dataInt) throws Exception {
 		try {
 			waitForSeconds(1);
+			LOG.info("Filling Legal Parent/Guardian1");
 			Parentaddress.sendKeys(dataInt.getParentaddress());
 			Zip.sendKeys(dataInt.getZip());
 			Home.sendKeys(dataInt.getHome());
@@ -67,6 +71,8 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			EmailAddress.sendKeys(dataInt.getEmailAddress());
 			Parentemployer.sendKeys(dataInt.getParentemployer());
 			Telephone.sendKeys(dataInt.getTelephone());
+			LOG.info("Successfully filled Legal Parent/Guardian 1 details");
+			LOG.info("Filling Legal Parent/Guardian2");
 			Parentaddress1.sendKeys(dataInt.getParentaddress1());
 			Zip1.sendKeys(dataInt.getZip1());
 			Home1.sendKeys(dataInt.getHome1());
@@ -74,6 +80,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			EmailAddress1.sendKeys(dataInt.getEmailAddress1());
 			Parentemployer1.sendKeys(dataInt.getParentemployer1());
 			Telephone1.sendKeys(dataInt.getTelephone1());
+			LOG.info("Successfully filled Legal Parent/Guardian 2 details");
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
@@ -83,6 +90,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 	
 	public void emergencyContacts(DataInt dataInt) throws Exception {
 		try {
+			LOG.info("Filling Emergency Contacts");
 			Name.sendKeys(dataInt.getName());
 			Relationtochild.sendKeys(dataInt.getRelationtochild());
 			Cell2.sendKeys(dataInt.getCell2());
@@ -91,7 +99,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			Relationtochild1.sendKeys(dataInt.getRelationtochild1());
 			Cell3.sendKeys(dataInt.getCell3());
 			EmailAddress3.sendKeys(dataInt.getEmailAddress3());
-			
+			LOG.info("Successfully filled Emergency Contacts");
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
@@ -100,7 +108,8 @@ public class StudentFormFill extends StudebtFormPageObjects {
 	}
 	public void pickupafterschool(DataInt dataInt) throws Exception {
 		try {	
-			Pickupname.sendKeys(dataInt.getPickupname1());
+			LOG.info("Filling pickup persons details");
+			Pickupname1.sendKeys(dataInt.getPickupname1());
 			PickuppersonTelephone1.sendKeys(dataInt.getPickuppersonTelephone1());
 			Pickupname2.sendKeys(dataInt.getPickupname2());
 			PickuppersonTelephone2.sendKeys(dataInt.getPickuppersonTelephone2());
@@ -118,6 +127,9 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			PickuppersonTelephone8.sendKeys(dataInt.getPickuppersonTelephone8());				
 			Pickupname9.sendKeys(dataInt.getPickupname9());
 			PickuppersonTelephone9.sendKeys(dataInt.getPickuppersonTelephone9());
+			Pickupname10.sendKeys(dataInt.getPickupname10());
+			PickuppersonTelephone10.sendKeys(dataInt.getPickuppersonTelephone10());
+			LOG.info("Successfully filled  pickup persons details");
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
@@ -126,6 +138,7 @@ public class StudentFormFill extends StudebtFormPageObjects {
 	}	
 	public void medicalConditions(DataInt dataInt) throws Exception {
 		try {	
+			LOG.info("Filling Medical Conditions details");
 			waitForSeconds(3);
 			browsername();
 			waitForSeconds(1);
@@ -134,15 +147,17 @@ public class StudentFormFill extends StudebtFormPageObjects {
 				waitForSeconds(3);}
 			Noknownhealthproblems.click();
 			waitForSeconds(2);
-			
+			LOG.info("Successfully filled  Medical Conditions details");
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
 
 		}
 	}
+	
 	public void signatureanddate(DataInt dataInt) throws Exception {
 		try {
+			LOG.info("Entering details of name,signature and date");
 			Parentorgurdain.sendKeys(dataInt.getParentorGuardian());
 			browsername();
 			waitForSeconds(1);
@@ -159,9 +174,13 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			waitForSeconds(2);
 			systemdateselect();
 			waitForSeconds(2);
+			LOG.info("Entered details of name,signature and date");
 			TermsandConditions.click();
+			LOG.info("Clicked Terms&Conditions");
 			waitForSeconds(3);
-			Submit.click();
+			//Submit.click();
+			LOG.info("Student Form Submited Successfully");
+			checkAlert();
 		} catch (Exception e) {
 			excep = e.toString();
 			Assert.fail(excep);
@@ -169,8 +188,20 @@ public class StudentFormFill extends StudebtFormPageObjects {
 		}
 	}
 	
+	public void paymentprocess(DataInt dataInt){
+		try {
+			if (Selectbox.isEnabled()) {
+				Selectbox.click();
+				Makepayment.click();
+				this.paymentdetails(dataInt);
+			   }
+			
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	 }
 	
-	public void payment(DataInt dataInt) throws Exception {
+	public void paymentdetails(DataInt dataInt) throws Exception {
 		try {
 			waitForSeconds(8);
 			Cardtype.sendKeys(dataInt.getCardtype());
@@ -181,9 +212,9 @@ public class StudentFormFill extends StudebtFormPageObjects {
 			waitForSeconds(2);
 			Paynow.click();
 			waitForSeconds(7);
-		    Nameofparent.click();
+		   /* Nameofparent.click();
 		    waitForSeconds(1);
-			Studentdetails.click();
+			Studentdetails.click();*/
 			
 		} catch (Exception e) {
 			excep = e.toString();
@@ -191,5 +222,21 @@ public class StudentFormFill extends StudebtFormPageObjects {
 
 		}
 	}
+	
+	
+	
+	
+	
+	
+			
+			
+			
+			
+			
+	
+	
+	
+	
+	
 	
 }

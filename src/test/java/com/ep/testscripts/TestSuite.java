@@ -1,6 +1,8 @@
 package com.ep.testscripts;
 
 import java.util.Iterator;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,32 +18,46 @@ public class TestSuite extends Base {
 	String testDataPath = System.getProperty("user.dir")
 			+ "\\src\\main\\java\\com\\ep\\test\\data\\TestData.xlsx";
 	public Xls_Reader xls = new Xls_Reader(testDataPath);
+    Map<String, Object[]> testresultdata;
 	
 	
 	
 
-	@Test(description = "Signup", dataProvider = "getsignup",retryAnalyzer=Retry.class, priority = 0)
+	/*@Test(description = "Signup", dataProvider = "getsignup",retryAnalyzer=Retry.class, priority = 0)
 	public void SignupProcess(DataInt dataInt) throws Exception {
 		signup=driverhome.getSignup();
 		signup.accountregisteristration(dataInt);			
-	}
-
+	}*/
+	
+	@Test(description = "Launches the Elop Test Application and Login", dataProvider = "getLogin", priority = 0)
+	public void Login(DataInt dataInt) throws Exception {
+			login= driverhome.getLogin();
+			login.accountlogin(dataInt);
+			
+		  }
+			
+	
 	/*@Test(description = "Login", dataProvider = "getLogin", priority = 0)
 	public void Login(DataInt dataInt) throws Exception {
 			login= driverhome.getLogin();
 			login.accountlogin(dataInt);			
-	}
+	}*/
 	
 	
-   @Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 1)
+  /* @Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 1)
 	public void fillingform(DataInt dataInt) throws Exception {
 		formfill=driverhome.getformfill();
-		formfill.newformfill(dataInt);
-		formfill.Payment(dataInt);
+		formfill.studentinfo(dataInt);
+		formfill.legalparentorguardian(dataInt);
+		formfill.emergencyContacts(dataInt);
+		formfill.pickupafterschool(dataInt);
+		formfill.medicalConditions(dataInt);
+		formfill.signatureanddate(dataInt);
+		formfill.paymentprocess(dataInt);
 					
-	}
+	}*/
 	
-	@Test(description = "StudentWaitingListFormfill", dataProvider = "getStudentForm" , priority = 2)
+	/*@Test(description = "StudentWaitingListFormfill", dataProvider = "getStudentForm" , priority = 2)
 	public void waitinglistformfilling(DataInt dataInt) throws Exception {
 	waitinglistform = driverhome.getWaitingListForm();
 	waitinglistform.waitinglistformfill(dataInt);

@@ -32,6 +32,9 @@ public class DataInt implements Serializable {
 					public String Password ="";
 					
 					
+					
+					
+					
 			//----StudentForm----//
 					
 					public String Lastname ="";		

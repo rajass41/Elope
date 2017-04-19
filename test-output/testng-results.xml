@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
     <line>
       <![CDATA[=====Browser Session Started=====]]>
@@ -8,12 +8,12 @@
       <![CDATA[=====Browser Session End=========]]>
     </line>
   </reporter-output>
-  <suite name="EP_Automation" duration-ms="40862" started-at="2017-04-13T13:50:04Z" finished-at="2017-04-13T13:50:44Z">
+  <suite name="EP_Automation" duration-ms="41854" started-at="2017-04-18T10:01:40Z" finished-at="2017-04-18T10:02:22Z">
     <groups>
     </groups>
-    <test name="EP_Automation" duration-ms="40862" started-at="2017-04-13T13:50:04Z" finished-at="2017-04-13T13:50:44Z">
+    <test name="EP_Automation" duration-ms="41854" started-at="2017-04-18T10:01:40Z" finished-at="2017-04-18T10:02:22Z">
       <class name="com.ep.testscripts.TestSuite">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@1b6e1eff]" name="setUp" is-config="true" duration-ms="10165" started-at="2017-04-13T19:20:04Z" finished-at="2017-04-13T19:20:14Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@45b4c3a9]" name="setUp" is-config="true" duration-ms="14037" started-at="2017-04-18T15:31:40Z" finished-at="2017-04-18T15:31:54Z">
           <params>
             <param index="0">
               <value>
@@ -27,18 +27,51 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="SignupProcess(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@1b6e1eff]" name="SignupProcess" duration-ms="21844" started-at="2017-04-13T19:20:14Z" description="Signup" data-provider="getsignup" finished-at="2017-04-13T19:20:36Z">
+        <test-method status="FAIL" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@45b4c3a9]" name="Login" duration-ms="18282" started-at="2017-04-18T15:31:54Z" description="Launches the Elop Test Application and Login" data-provider="getLogin" finished-at="2017-04-18T15:32:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@3724af13]]>
+                <![CDATA[com.ep.datainitialization.DataInt@7f6f61c8]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.ep.testscripts.SetupEnvironment.Get_RowNum(SetupEnvironment.java:90)
+	at com.ep.testscripts.SetupEnvironment.createXLSReport(SetupEnvironment.java:112)
+	at com.ep.testscripts.TestSuite.Login(TestSuite.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignupProcess -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@1b6e1eff]" name="close" is-config="true" duration-ms="8734" started-at="2017-04-13T19:20:36Z" finished-at="2017-04-13T19:20:44Z">
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@45b4c3a9]" name="close" is-config="true" duration-ms="9129" started-at="2017-04-18T15:32:13Z" finished-at="2017-04-18T15:32:22Z">
           <reporter-output>
             <line>
               <![CDATA[=====Browser Session End=========]]>

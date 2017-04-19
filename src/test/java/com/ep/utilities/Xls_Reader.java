@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -26,7 +26,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 
 public class Xls_Reader {
-	public static final Logger LOG = Logger.getLogger(Xls_Reader.class);
+	//public static final Logger LOG = Logger.getLogger(Xls_Reader.class);
 	public  String path;
 	public  FileInputStream fis = null;
 	public  FileOutputStream fileOut =null;
@@ -153,7 +153,7 @@ public class Xls_Reader {
 
 		if(cell==null)
 			return "";
-		LOG.info("cell type:"+cell.getCellType());
+		//LOG.info("cell type:"+cell.getCellType());
 	  if(cell.getCellType()==Cell.CELL_TYPE_STRING){
 		  return cell.getStringCellValue();}
 	  else if(cell.getCellType()==Cell.CELL_TYPE_NUMERIC || cell.getCellType()==Cell.CELL_TYPE_FORMULA ){
@@ -161,7 +161,7 @@ public class Xls_Reader {
 		  String cellText;
 		  if (HSSFDateUtil.isCellDateFormatted(cell)) {
 	           // format in form of M/D/YY
-			  LOG.info("isCellDateFormatted");
+			 // LOG.info("isCellDateFormatted");
 			  double d = cell.getNumericCellValue();
 
 			  Calendar cal =Calendar.getInstance();
@@ -172,14 +172,14 @@ public class Xls_Reader {
 	                      cal.get(Calendar.DAY_OF_MONTH) + "/" +
 	                      cellText;
 	           
-	           LOG.info(cellText);
+	          // LOG.info(cellText);
 
 	         } else {
 	        	  //cellText  = String.valueOf(cell.getNumericCellValue()); 
 	        	  cellText=String.valueOf((long)cell.getNumericCellValue());
 	         }
 		  //cellText=String.valueOf((long)cell.getNumericCellValue());
-		  LOG.info(cellText);
+		 // LOG.info(cellText);
 		  return cellText;
 	  }else if(cell.getCellType()==Cell.CELL_TYPE_BLANK)
 	      return "";
@@ -187,7 +187,7 @@ public class Xls_Reader {
 		  return String.valueOf(cell.getBooleanCellValue());
 		}
 		catch(Exception e){
-			LOG.info("Exception"+e.getMessage());
+			//LOG.info("Exception"+e.getMessage());
 			e.printStackTrace();
 			return "row "+rowNum+" or column "+colNum +" does not exist  in xls";
 		}

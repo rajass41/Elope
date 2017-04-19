@@ -17,8 +17,11 @@ public class ForgotPassword  extends ForgotPasswordPageObjects{
 			waitForSeconds(6);
 			Forgotpswd.click();
 			waitForSeconds(4);
+			Assert.assertTrue(driver.getTitle().contains("Forgot Password"));
 			Emailforgetpassword.sendKeys(dataInt.getEmail());
+			LOG.info("Entering registerd email address");
 			Submitforforget.click();
+			LOG.info("Forgot password link has been sent successfully to registered email address");
 			
 		} catch (Exception e) {
 			excep = e.toString();

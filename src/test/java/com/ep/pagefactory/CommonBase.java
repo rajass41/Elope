@@ -3,11 +3,17 @@ package com.ep.pagefactory;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -30,6 +36,10 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
@@ -38,10 +48,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -54,6 +66,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
+import org.testng.ITestContext;
 
 import com.ep.utilities.PropertiesFileReader;
 import com.ep.pagefactory.CommonBase;
@@ -83,6 +96,9 @@ public class CommonBase {
 	public static Properties CONFIG = null;
 	public static WebDriver driver;
 	public static WebElement webelement = null;
+	protected Map<String, Object[]> testresultdata;
+	HSSFWorkbook workbook;
+	HSSFSheet sheet;
 	public Screen s = new Screen();
 	
 	
@@ -166,8 +182,20 @@ public class CommonBase {
 			driver.get(url);
 
 		} else if (browser.equalsIgnoreCase("chrome")||browser.equalsIgnoreCase("google chrome")) {
-			DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome () ;      
-			handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
+			Map<String, Object> prefs = new HashMap<String, Object>();				
+			prefs.put("profile.default_content_settings.popups", 0);
+			prefs.put("profile.default_content_setting_values.notifications", 2);
+			prefs.put("credentials_enable_service", false);
+			prefs.put("password_manager_enabled", false);
+			ChromeOptions options = new ChromeOptions();	 	               
+			options.setExperimentalOption("prefs", prefs);
+			options.addArguments("disable-infobars");
+			options.addArguments("--disable-extensions");
+			options.addArguments("--test-type");
+			DesiredCapabilities cap = DesiredCapabilities.chrome () ;      
+			cap.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
+			cap.setCapability(ChromeOptions.CAPABILITY, options);
+			cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 			System.setProperty(
 					"webdriver.chrome.driver",
 					System.getProperty("user.dir")
@@ -175,7 +203,7 @@ public class CommonBase {
 							+ "BrowserDrivers"
 							+ System.getProperty("file.separator")
 							+ "chromedriver.exe");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(cap);
 			driver.get(url);
 
 		}else if (browser.equalsIgnoreCase("safari")||browser.equalsIgnoreCase("apple safari")) {
@@ -418,11 +446,10 @@ public class CommonBase {
 
 		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
 		browserName = cap.getBrowserName().toLowerCase();
-		LOG.info("BrowserName is" + browserName);
 		String os = cap.getPlatform().toString();
-		LOG.info("OS is" + os);
-		String ver = cap.getVersion().toString();
-		LOG.info("OS version is" + ver);
+		System.out.println("Operating System "+os);
+		String version = cap.getVersion().toString();
+		System.out.println("Version is "+version);
 
 	}
 
@@ -527,7 +554,7 @@ public class CommonBase {
 			}
 	
 	public void emailreport(){		 
-		 sendPDFReportByGMail("ebiztesting57@gmail.com", "1111111!", "mani6747@gmail.com", "Elop Parent Automation Report", "");
+		 sendPDFReportByGMail("seleniumautomatonreports@gmail.com", "1111111!", "mani6747@gmail.com", "Elop Parent Automation Report", "");
 	 }	 
 	  
 	 private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
@@ -699,9 +726,80 @@ public class CommonBase {
 					System.out.println("Error occurred while performing drag and drop operation "+ e.getStackTrace());
 				}
 			}
-			
-			
-			
-			
 	
-	}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			public void setupBeforeSuite(ITestContext context) {
+			   
+			      workbook = new HSSFWorkbook();
+			      
+			       sheet = workbook.createSheet("Test Result");
+			      testresultdata = new LinkedHashMap<String, Object[]>();
+			      //add test result excel file column header
+			      //write the header in the first row
+			      testresultdata.put("1", new Object[] {"Test Step Id", "Action", "Expected Result","Actual Result"});
+			
+			}
+			
+			
+			
+			
+			
+			
+			public void setupAfterSuite() {
+			    //write excel file and file name is TestResult.xls 
+			    Set<String> keyset = testresultdata.keySet();
+			    int rownum = 0;
+			    for (String key : keyset) {
+			        Row row = sheet.createRow(rownum++);
+			        Object [] objArr = testresultdata.get(key);
+			        int cellnum = 0;
+			        for (Object obj : objArr) {
+			            Cell cell = row.createCell(cellnum++);
+			            if(obj instanceof Date) 
+			                cell.setCellValue((Date)obj);
+			            else if(obj instanceof Boolean)
+			                cell.setCellValue((Boolean)obj);
+			            else if(obj instanceof String)
+			                cell.setCellValue((String)obj);
+			            else if(obj instanceof Double)
+			                cell.setCellValue((Double)obj);
+			        }
+			    }
+			    try {
+			        FileOutputStream out =new FileOutputStream(new File("TestResult.xls"));
+			        workbook.write(out);
+			        out.close();
+			        System.out.println("Excel written successfully..");
+			         
+			    } catch (FileNotFoundException e) {
+			        e.printStackTrace();
+			    } catch (IOException e) {
+			        e.printStackTrace();
+			    }
+			    
+			  }	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+}

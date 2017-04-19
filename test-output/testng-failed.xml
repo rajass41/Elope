@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="3" name="Failed suite [EP_Automation]">
-  <parameter name="browser" value="firefox"/>
+  <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="com.ep.listeners.TestListener"/>
     <listener class-name="com.ep.listeners.ExtentReporterNG"/>
   </listeners>
   <test name="EP_Automation(failed)">
-    <parameter name="browser" value="firefox"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.ep.testscripts.TestSuite">
         <methods>
-          <include name="SignupProcess" invocation-numbers="0 0 0 0"/>
           <include name="close"/>
           <include name="setUp"/>
+          <include name="Login" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ep.testscripts.TestSuite -->
     </classes>
