@@ -57,6 +57,7 @@ public class DriverHome extends CommonBase {
 	public ForgotPassword getpswd(){
 		return PageFactory.initElements(driver, ForgotPassword.class);
 	}
+
 	
 	
 	

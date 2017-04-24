@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>EP_Automation</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 18 15:31:40 IST 2017</td>
+<td>Started on:</td><td>Mon Apr 24 17:36:39 IST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>41 seconds (41854 ms)</td>
+<tr><td>Total time:</td><td>218 seconds (218268 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,11 +75,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ep.testscripts.TestSuite.Login()'><b>Login</b><br>Test class: com.ep.testscripts.TestSuite<br>Test method: Launches the Elop Test Application and Login<br>Parameters: com.ep.datainitialization.DataInt@7f6f61c8</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.ep.testscripts.SetupEnvironment.Get_RowNum(SetupEnvironment.java:90)
-	at com.ep.testscripts.SetupEnvironment.createXLSReport(SetupEnvironment.java:112)
-	at com.ep.testscripts.TestSuite.Login(TestSuite.java:41)
+<td title='com.ep.testscripts.TestSuite.ForgotPassword()'><b>ForgotPassword</b><br>Test class: com.ep.testscripts.TestSuite<br>Test method: Forgotpassword<br>Parameters: com.ep.datainitialization.DataInt@7e8dcdaa</td>
+<td><div><pre>junit.framework.AssertionFailedError: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div/section/div/div/form/div/div/a[1]&quot;}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;
+System info: host: &apos;DESKTOP-3JIP3OF&apos;, ip: &apos;192.168.10.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_101&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\MANIKA~1\AppData\Local\Temp\scoped_dir12284_20072}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=accept}]
+Session ID: 5b66a205dd8bd902a767a5afc58f2ff7
+*** Element info: {Using=xpath, value=/html/body/div/section/div/div/form/div/div/a[1]}
+	at junit.framework.Assert.fail(Assert.java:50)
+	at com.ep.pagefactory.ForgotPassword.forgottenpassword(ForgotPassword.java:28)
+	at com.ep.testscripts.TestSuite.ForgotPassword(TestSuite.java:104)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -101,14 +111,22 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
 	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace788892554", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace788892554'><pre>java.lang.NullPointerException
-	at com.ep.testscripts.SetupEnvironment.Get_RowNum(SetupEnvironment.java:90)
-	at com.ep.testscripts.SetupEnvironment.createXLSReport(SetupEnvironment.java:112)
-	at com.ep.testscripts.TestSuite.Login(TestSuite.java:41)
+	at com.ep.testscripts.GenerateReport.main(GenerateReport.java:33)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1088417975", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1088417975'><pre>junit.framework.AssertionFailedError: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div/section/div/div/form/div/div/a[1]&quot;}
+  (Session info: chrome=57.0.2987.133)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:32:46&apos;
+System info: host: &apos;DESKTOP-3JIP3OF&apos;, ip: &apos;192.168.10.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_101&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\MANIKA~1\AppData\Local\Temp\scoped_dir12284_20072}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=57.0.2987.133, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=accept}]
+Session ID: 5b66a205dd8bd902a767a5afc58f2ff7
+*** Element info: {Using=xpath, value=/html/body/div/section/div/div/form/div/div/a[1]}
+	at junit.framework.Assert.fail(Assert.java:50)
+	at com.ep.pagefactory.ForgotPassword.forgottenpassword(ForgotPassword.java:28)
+	at com.ep.testscripts.TestSuite.ForgotPassword(TestSuite.java:104)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -130,12 +148,33 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
 	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+	at com.ep.testscripts.GenerateReport.main(GenerateReport.java:33)
 </pre></div></td>
-<td>18</td>
-<td>com.ep.testscripts.TestSuite@45b4c3a9</td></tr>
+<td>36</td>
+<td>com.ep.testscripts.TestSuite@44c03695</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ep.testscripts.TestSuite.ContactUs()'><b>ContactUs</b><br>Test class: com.ep.testscripts.TestSuite<br>Test method: ContactUsForm<br>Parameters: com.ep.datainitialization.DataInt@8c11eee</td>
+<td></td>
+<td>27</td>
+<td>com.ep.testscripts.TestSuite@44c03695</td></tr>
+<tr>
+<td title='com.ep.testscripts.TestSuite.Login()'><b>Login</b><br>Test class: com.ep.testscripts.TestSuite<br>Test method: Login<br>Parameters: com.ep.datainitialization.DataInt@302a07d</td>
+<td></td>
+<td>32</td>
+<td>com.ep.testscripts.TestSuite@44c03695</td></tr>
+<tr>
+<td title='com.ep.testscripts.TestSuite.fillingform()'><b>fillingform</b><br>Test class: com.ep.testscripts.TestSuite<br>Test method: StudentFormfill<br>Parameters: com.ep.datainitialization.DataInt@5cdd09b1</td>
+<td></td>
+<td>80</td>
+<td>com.ep.testscripts.TestSuite@44c03695</td></tr>
 </table><p>
 </body>
 </html>

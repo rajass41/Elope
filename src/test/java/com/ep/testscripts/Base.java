@@ -1,11 +1,8 @@
 package com.ep.testscripts;
 
-//import org.apache.log4j.Logger;
 
-import java.util.Map;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Reporter;
-import org.testng.ITestContext;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -30,7 +27,8 @@ import com.ep.utilities.Xls_Reader;
  */
 
 public class Base {
-	//public static final Logger LOG = Logger.getLogger(Base.class);
+
+
 	public DriverHome driverhome;
 	public ParentRegistration signup;
 	public Login login;
@@ -41,12 +39,12 @@ public class Base {
 	public MyProfile profile;
 	public Logout acclogout;
 	public ForgotPassword pswd;
-	ITestContext context;
-	protected  Map<String, Object[]> testresultdata;
+	
 	public static String passMessage = null;
 	public static String finalMessage = null;
 	public static String skipMessage = null;
 	public Xls_Reader xls;
+	public String testreportpath = System.getProperty("user.dir");
 
 	@BeforeTest(alwaysRun = true)
 	@Parameters({ "browser" })
@@ -54,7 +52,7 @@ public class Base {
 		try {
 			Reporter.log("=====Browser Session Started=====", true);
 			driverhome = new DriverHome(browser, "test");
-			driverhome.setupBeforeSuite(context);
+			
 		} catch (WebDriverException e) {
 			System.out.println(e);
 			
@@ -62,16 +60,19 @@ public class Base {
 	}
 
 	@AfterTest
+
 	public void close() throws Exception {
 		try {
 			Thread.sleep(5000);
-			driverhome.setupAfterSuite();
-		    driverhome.emailreport();
-			//driverhome.quitDriver();
+		    //driverhome.emailreport();
+			driverhome.quitDriver();
 			Reporter.log("=====Browser Session End=========", true);
 		} catch (WebDriverException e) {
 			System.out.println(e); 
 
 		}
 	}
+	
+	
+
 }

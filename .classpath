@@ -12,7 +12,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -25,20 +25,25 @@
 	<classpathentry kind="lib" path="E:/jars/apache-log4j-extras-1.1.jar"/>
 	<classpathentry kind="lib" path="E:/jars/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="E:/jars/junit-4.10 (1).jar"/>
-	<classpathentry kind="lib" path="E:/jars/jxl.jar"/>
 	<classpathentry kind="lib" path="E:/jars/log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="E:/jars/poi-3.10-FINAL-20140208.jar"/>
-	<classpathentry kind="lib" path="E:/jars/poi-ooxml-3.10-FINAL.jar"/>
-	<classpathentry kind="lib" path="E:/jars/poi-ooxml-schemas-3.10-FINAL.jar"/>
 	<classpathentry kind="lib" path="E:/jars/sikuli-java.jar"/>
 	<classpathentry kind="lib" path="E:/jars/testng-6.8.5.jar"/>
-	<classpathentry kind="lib" path="E:/jars/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="E:/jars/mysql-connector.jar"/>
-	<classpathentry kind="lib" path="E:/jars/extentreports-java-2.02.jar"/>
 	<classpathentry kind="lib" path="E:/jars/extentreports-2.41.0.jar"/>
 	<classpathentry kind="lib" path="E:/jars/New folder/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="E:/jars/New folder/mail-1.4.jar"/>
 	<classpathentry kind="lib" path="E:/jars/selenium-java-2.53.1.jar"/>
 	<classpathentry kind="lib" path="E:/jars/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="E:/jars/jxl-2.6.12.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/ATExcelReport.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/jfreechart.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/jfreechart-dependency-jcommon-1.0.12.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/poi-3.15.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/poi-ooxml-3.15.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/poi-ooxml-schemas-3.15.jar"/>
+	<classpathentry kind="lib" path="E:/jars/AT Excel Report Jars/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="E:/jars/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="E:/jars/ashot-1.5.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
