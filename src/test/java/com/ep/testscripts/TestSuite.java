@@ -13,15 +13,14 @@ import com.ep.utilities.Xls_Reader;
 public class TestSuite extends Base {
 	
 	public static final Logger LOG = Logger.getLogger(TestSuite.class);
-	String testDataPath = System.getProperty("user.dir")
-			+ "\\src\\main\\java\\com\\ep\\test\\data\\TestData.xlsx";
+	String testDataPath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\ep\\test\\data\\TestData.xlsx";
 	public Xls_Reader xls = new Xls_Reader(testDataPath);
     
 	
 	
 	
 
-	@Test(description = "Signup", dataProvider = "getsignup",retryAnalyzer=Retry.class, priority = 0)
+  /* @Test(description = "Signup", dataProvider = "getsignup",retryAnalyzer=Retry.class, priority = 0)
 	public void SignupProcess(DataInt dataInt) throws Exception {
 		try {
 			signup=driverhome.getSignup();
@@ -30,7 +29,7 @@ public class TestSuite extends Base {
 			e.printStackTrace();
 		}
 			
-	}
+	}*/
 	
 	
 	@Test(description = "Login", dataProvider = "getLogin", priority = 1)
@@ -45,7 +44,7 @@ public class TestSuite extends Base {
 	}
 	
 	
- @Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 2)
+    @Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 2)
 	public void fillingform(DataInt dataInt) throws Exception {
 	 try {
 		    formfill=driverhome.getformfill();
@@ -63,7 +62,7 @@ public class TestSuite extends Base {
 				
 	}
 	
-	@Test(description = "StudentWaitingListFormfill", dataProvider = "getStudentForm" , priority = 3)
+ @Test(description = "StudentWaitingListFormfill", dataProvider = "getStudentForm" , priority = 3)
 	public void waitinglistformfilling(DataInt dataInt) throws Exception {
 		try {
 			waitinglistform = driverhome.getWaitingListForm();
@@ -109,7 +108,18 @@ public class TestSuite extends Base {
 		
 	}
 	
-	@Test(description = "AccountLogout",  priority = 7)
+	@Test(description = "Tax",  priority = 7)
+	public void Taxstatement() throws Exception {
+		try {
+			statement=driverhome.getstatement();
+			statement.taxreport();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test(description = "AccountLogout",  priority = 8)
 	public void AccLogout() throws Exception {
 		try {
 			acclogout=driverhome.getacclogout();
@@ -120,8 +130,7 @@ public class TestSuite extends Base {
 		
 	}
 	
-	
-	@Test(description = "Forgotpassword", dataProvider = "getContactus", priority = 8)
+	@Test(description = "Forgotpassword", dataProvider = "getContactus", priority = 9)
 	public void ForgotPassword(DataInt dataInt) throws Exception {
 		try {
 			pswd=driverhome.getpswd();
@@ -133,36 +142,31 @@ public class TestSuite extends Base {
 	}
 	
 	
-	
-	
-	
 	@DataProvider
-	    public Iterator<Object[]> getsignup(){
+	   public Iterator<Object[]> getsignup(){
 	        return Util.getSignup("Signup", xls).iterator();
 	    }
-		     
-	
-	
+		     	
 	@DataProvider
-		public Iterator<Object[]> getLogin() {
+	public Iterator<Object[]> getLogin() {
 			return Util.getLoginData("Login", xls).iterator();
 
 		}
 			
 	@DataProvider
-		public Iterator<Object[]> getStudentForm() {
+	public Iterator<Object[]> getStudentForm() {
 			return Util.getStudentForm("StudentForm", xls).iterator();
 
 			}	
 			
 	@DataProvider
-		public Iterator<Object[]> getContactus() {
+	public Iterator<Object[]> getContactus() {
 			return Util.getContactus("Contactus", xls).iterator();
 
 			}		
 			
 	@DataProvider
-		public Iterator<Object[]> getChangePassword() {
+	public Iterator<Object[]> getChangePassword() {
 			return Util.getChangePassword("ChangePassword", xls).iterator();
 
 			}	

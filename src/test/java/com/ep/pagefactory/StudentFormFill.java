@@ -40,8 +40,7 @@ public class StudentFormFill extends StudentFormPageObjects {
 			waitForSeconds(2);}
 			Dateofbirth.click();
 			systemdateselect();
-			waitForSeconds(3);
-			waitForSeconds(1);
+			waitForSeconds(2);
 			Gender.click();
 			waitForSeconds(1);
 			YesImmunizationRecordatSchool.click();
@@ -178,7 +177,7 @@ public class StudentFormFill extends StudentFormPageObjects {
 			TermsandConditions.click();
 			LOG.info("Clicked Terms&Conditions");
 			waitForSeconds(3);
-			//Submit.click();
+			Submit.click();
 			LOG.info("Student Form Submited Successfully");
 			checkAlert();
 		} catch (Exception e) {
@@ -192,8 +191,9 @@ public class StudentFormFill extends StudentFormPageObjects {
 		try {
 			if (Selectbox.isEnabled()) {
 				Selectbox.click();
+				waitForSeconds(2);
 				Makepayment.click();
-				this.paymentdetails(dataInt);
+				paymentdetails(dataInt);
 			   }
 			
 		} catch (Exception e) {
@@ -203,7 +203,7 @@ public class StudentFormFill extends StudentFormPageObjects {
 	
 	public void paymentdetails(DataInt dataInt) throws Exception {
 		try {
-			waitForSeconds(8);
+			waitForSeconds(6);
 			Cardtype.sendKeys(dataInt.getCardtype());
 			Cardnumber.sendKeys(dataInt.getCardnumber());
 			Month.sendKeys(dataInt.getMonth());
@@ -211,10 +211,10 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Cvv.sendKeys(dataInt.getCVV());
 			waitForSeconds(2);
 			Paynow.click();
-			waitForSeconds(7);
-		   /* Nameofparent.click();
+			waitForSeconds(9);
+		    Nameofparent.click();
 		    waitForSeconds(1);
-			Studentdetails.click();*/
+			Studentdetails.click();
 			
 		} catch (Exception e) {
 			excep = e.toString();

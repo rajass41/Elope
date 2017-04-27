@@ -6,6 +6,7 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+
 import com.ep.pagefactory.ChangePassword;
 import com.ep.pagefactory.ContactUs;
 import com.ep.pagefactory.DriverHome;
@@ -16,6 +17,7 @@ import com.ep.pagefactory.MyProfile;
 import com.ep.pagefactory.ParentRegistration;
 import com.ep.pagefactory.StudentFormFill;
 import com.ep.pagefactory.StudentWaitingListForm;
+import com.ep.pagefactory.TaxStatement;
 import com.ep.utilities.Xls_Reader;
 
 /**
@@ -37,6 +39,7 @@ public class Base {
 	public ContactUs contact;
 	public ChangePassword cpswd;
 	public MyProfile profile;
+	public TaxStatement statement;
 	public Logout acclogout;
 	public ForgotPassword pswd;
 	

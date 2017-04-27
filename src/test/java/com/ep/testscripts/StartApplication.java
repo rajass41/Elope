@@ -9,24 +9,19 @@ import org.testng.TestNG;
 import com.ep.pagefactory.CommonBase;
 
 
-public class GenerateReport extends CommonBase{
+public class StartApplication extends CommonBase{
 
 
-	protected GenerateReport(WebDriver driver) {
+	protected StartApplication(WebDriver driver) {
 		super(driver);
 	}
 
 	public static void main (String[] args) throws Exception {
 	   try {
-		     // Create object of TestNG Class
 			 TestNG runner=new TestNG();
-			 // Create a list of String 
 			 List<String> suitefiles=new ArrayList<String>();
-			 // Add xml file which you have to execute
 			 suitefiles.add("D://ElopParentProject//EPTestNG.xml");
-			 // now set xml file for execution
 			 runner.setTestSuites(suitefiles);
-			 // finally execute the runner using run method
 			 runner.run();
 		     Xl.generateReport("TestReport.xlsx");
 		     emailreport();
@@ -38,5 +33,6 @@ public class GenerateReport extends CommonBase{
 	   }
 	
 }
+
 
 

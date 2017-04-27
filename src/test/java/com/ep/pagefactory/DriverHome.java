@@ -51,6 +51,12 @@ public class DriverHome extends CommonBase {
 		return PageFactory.initElements(driver, MyProfile.class);
 	}
 	
+	public TaxStatement getstatement(){
+		return PageFactory.initElements(driver, TaxStatement.class);
+	}
+	
+	
+	
 	public Logout getacclogout (){
 		return PageFactory.initElements(driver, Logout.class);
 	}

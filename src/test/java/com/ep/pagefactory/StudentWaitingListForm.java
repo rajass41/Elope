@@ -20,14 +20,16 @@ public class StudentWaitingListForm extends StudentFormFill {
 			waitForSeconds(5);
 			AfterONLy.click();
 			waitForSeconds(1);
-			new Select(Schoolname).selectByVisibleText("Sea Isle Elementary");
+			new Select(Schoolname).selectByVisibleText("Alcy Elementary");
 			waitForSeconds(3);
 			Lastname.sendKeys(dataInt.getLastname());
 			Firsttname.sendKeys(dataInt.getFirstname());
 			Middletname.sendKeys(dataInt.getMiddlename());
 			StateId.sendKeys(dataInt.getStateid());
 			Grade.sendKeys(dataInt.getGrade());
-			Dateofbirth.sendKeys(dataInt.getDOB());
+			Dateofbirth.click();
+			waitForSeconds(2);
+			systemdateselect();
 			waitForSeconds(2);
 			Submit.click();
 			

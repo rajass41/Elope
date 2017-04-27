@@ -592,9 +592,7 @@ public class CommonBase {
 			 Multipart multipart = new MimeMultipart();
 			 multipart.addBodyPart(objMessageBodyPart);
 			 objMessageBodyPart = new MimeBodyPart();
-
 			 String filename = reportpath;  
-			 System.out.println(filename);
 			 File file = new File(filename);
 			 //Create data source to attach the file in mail
 			 DataSource source = new FileDataSource(file);
