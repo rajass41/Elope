@@ -113,6 +113,10 @@
             <artifactId>jxl</artifactId>
     		<version>2.6.12</version>
         </dependency>
+		<dependency>
+			<groupId>org.automationtesting</groupId>
+			<artifactId>excelreport.Xl</artifactId>
+		</dependency>
 		</dependencies>
 		
 		
