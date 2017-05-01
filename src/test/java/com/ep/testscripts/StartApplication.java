@@ -26,7 +26,7 @@ public class StartApplication extends CommonBase{
 		     emailreport();
 		     
 	       } catch (Exception e) {
-	    	   e.getMessage();
+	    	   e.printStackTrace();
 	       }
 		
 	}
