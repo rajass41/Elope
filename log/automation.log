@@ -113,3 +113,46 @@
 2017-04-26 15:35:09 INFO  CommonBase:20 - Log Out Successfully
 2017-04-26 15:35:23 INFO  CommonBase:22 - Entering registerd email address
 2017-04-26 15:35:25 INFO  CommonBase:24 - Forgot password link has been sent successfully to registered email address
+2017-04-28 11:47:19 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 11:47:40 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 11:48:02 INFO  CommonBase:30 - Filling Student Info
+2017-04-28 11:48:14 INFO  CommonBase:53 - Successfully filled student info details
+2017-04-28 11:48:15 INFO  CommonBase:65 - Filling Legal Parent/Guardian1
+2017-04-28 11:48:17 INFO  CommonBase:73 - Successfully filled Legal Parent/Guardian 1 details
+2017-04-28 11:48:17 INFO  CommonBase:74 - Filling Legal Parent/Guardian2
+2017-04-28 11:48:20 INFO  CommonBase:82 - Successfully filled Legal Parent/Guardian 2 details
+2017-04-28 11:48:20 INFO  CommonBase:92 - Filling Emergency Contacts
+2017-04-28 11:48:22 INFO  CommonBase:101 - Successfully filled Emergency Contacts
+2017-04-28 11:48:22 INFO  CommonBase:110 - Filling pickup persons details
+2017-04-28 11:48:30 INFO  CommonBase:131 - Successfully filled  pickup persons details
+2017-04-28 11:48:30 INFO  CommonBase:140 - Filling Medical Conditions details
+2017-04-28 11:48:36 INFO  CommonBase:149 - Successfully filled  Medical Conditions details
+2017-04-28 11:48:36 INFO  CommonBase:159 - Entering details of name,signature and date
+2017-04-28 11:48:44 INFO  CommonBase:176 - Entered details of name,signature and date
+2017-04-28 11:48:44 INFO  CommonBase:178 - Clicked Terms&Conditions
+2017-04-28 11:48:48 INFO  CommonBase:181 - Student Form Submited Successfully
+2017-04-28 11:50:01 INFO  CommonBase:23 - Filling contact information
+2017-04-28 11:50:12 INFO  CommonBase:44 - Successfully filled contact details
+2017-04-28 11:50:26 INFO  CommonBase:25 - Entering Current,New,Confirm Passwords
+2017-04-28 11:50:30 INFO  CommonBase:31 - Password changed successfully
+2017-04-28 11:50:46 INFO  CommonBase:24 - Updateing profile details
+2017-04-28 11:50:52 INFO  CommonBase:27 - Profile details has been updated successfully
+2017-04-28 11:51:13 INFO  CommonBase:20 - Log Out Successfully
+2017-04-28 11:51:26 INFO  CommonBase:22 - Entering registerd email address
+2017-04-28 11:51:28 INFO  CommonBase:24 - Forgot password link has been sent successfully to registered email address
+2017-04-28 12:36:53 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 12:37:05 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 12:42:29 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 12:42:41 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 12:49:54 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 12:50:06 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 13:05:53 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 13:06:09 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 13:09:51 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 13:10:02 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 13:24:10 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 13:24:22 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 13:27:41 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 13:27:52 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-04-28 14:40:57 INFO  CommonBase:20 - Getting Values of email and password
+2017-04-28 14:41:12 INFO  CommonBase:26 - Parent Successfully Log In in to their account

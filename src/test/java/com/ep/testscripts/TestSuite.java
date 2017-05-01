@@ -44,7 +44,7 @@ public class TestSuite extends Base {
 	}
 	
 	
-    @Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 2)
+    /*@Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 2)
 	public void fillingform(DataInt dataInt) throws Exception {
 	 try {
 		    formfill=driverhome.getformfill();
@@ -139,7 +139,7 @@ public class TestSuite extends Base {
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 	
 	
 	@DataProvider

@@ -59,7 +59,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.Screen;
+
 
 import com.ep.utilities.PropertiesFileReader;
 import com.ep.pagefactory.CommonBase;
@@ -90,7 +90,6 @@ public class CommonBase {
 	public static Properties CONFIG = null;
 	public static WebDriver driver;
 	public static WebElement webelement = null;
-	public Screen s = new Screen();
 	public String Testcase;
 	public WritableSheet writablesh;
 	public WritableWorkbook workbookcopy;
