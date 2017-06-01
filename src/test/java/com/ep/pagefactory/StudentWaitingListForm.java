@@ -1,6 +1,5 @@
 package com.ep.pagefactory;
 
-import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import com.ep.datainitialization.DataInt;
@@ -14,7 +13,7 @@ public class StudentWaitingListForm extends StudentFormFill {
 	
 	
 	public void waitinglistformfill(DataInt dataInt) throws Exception {
-		try {
+		
 			waitForSeconds(7);
 			Newstudentform.click();
 			waitForSeconds(5);
@@ -33,11 +32,7 @@ public class StudentWaitingListForm extends StudentFormFill {
 			waitForSeconds(2);
 			Submit.click();
 			
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}
 
 }

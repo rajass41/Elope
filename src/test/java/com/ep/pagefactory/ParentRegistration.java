@@ -14,7 +14,7 @@ public class ParentRegistration extends SignupPageObjects{
 	}
 
 	public void accountregisteristration(DataInt dataInt) throws Exception {
-		try {
+		
 			Assert.assertTrue(driver.getTitle().contains("Parent :: Login"));
 			waitForSeconds(5);
 			Parentregister.click();
@@ -34,15 +34,10 @@ public class ParentRegistration extends SignupPageObjects{
 			waitForSeconds(1);
 			Pictures.click();
 			waitForSeconds(3);
-			//Register.click();
+			Register.click();
 			LOG.info("Successfully Parent Registered");
 			
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-			LOG.info(excep);
-
-		}
+		
 	}
 
 }

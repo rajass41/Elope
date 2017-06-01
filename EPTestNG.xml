@@ -9,11 +9,6 @@
 			<class name="com.ep.testscripts.TestSuite">
 				<methods>
 				    
-				  
-				    
-				    
-				    
-					
 			            
 				</methods>
 
@@ -21,6 +16,7 @@
 		</classes>
 	</test>
 	<listeners>
+	    <listener class-name="com.ep.listeners.AnnotationTransformer"></listener>
        <listener class-name="com.ep.listeners.TestListener"/>
        <listener class-name="com.ep.listeners.ExtentReporterNG"/>
   </listeners>

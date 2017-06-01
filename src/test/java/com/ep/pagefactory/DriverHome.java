@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import com.ep.utilities.PropertiesFileReader;
 
-
-
 public class DriverHome extends CommonBase {
 	
 	public static final String prod_url = PropertiesFileReader.readvalueOfKey("app.url");

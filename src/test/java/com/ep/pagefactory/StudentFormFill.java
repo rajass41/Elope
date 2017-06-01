@@ -2,9 +2,11 @@ package com.ep.pagefactory;
 
 
 import junit.framework.Assert;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+
 import com.ep.datainitialization.DataInt;
 import com.ep.pageobjects.StudentFormPageObjects;
 
@@ -17,7 +19,7 @@ public class StudentFormFill extends StudentFormPageObjects {
 	
 
 	public void studentinfo(DataInt dataInt) throws Exception {
-		try {
+		
 			Assert.assertTrue(driver.getTitle().contains("Parent Dashboard"));
 			waitForSeconds(8);
 			Newstudentform.click();
@@ -51,16 +53,12 @@ public class StudentFormFill extends StudentFormPageObjects {
 			waitForSeconds(1);
 			NoDoesthestudentusemedicalequipment.click();
 			LOG.info("Successfully filled student info details");
-			} catch (Exception e) {
-				excep = e.toString();
-				Assert.fail(excep);
-
-			}
+			
 		}
 			
 			
 	public void legalparentorguardian(DataInt dataInt) throws Exception {
-		try {
+		
 			waitForSeconds(1);
 			LOG.info("Filling Legal Parent/Guardian1");
 			Parentaddress.sendKeys(dataInt.getParentaddress());
@@ -80,15 +78,11 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Parentemployer1.sendKeys(dataInt.getParentemployer1());
 			Telephone1.sendKeys(dataInt.getTelephone1());
 			LOG.info("Successfully filled Legal Parent/Guardian 2 details");
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}
 	
 	public void emergencyContacts(DataInt dataInt) throws Exception {
-		try {
+		
 			LOG.info("Filling Emergency Contacts");
 			Name.sendKeys(dataInt.getName());
 			Relationtochild.sendKeys(dataInt.getRelationtochild());
@@ -99,14 +93,11 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Cell3.sendKeys(dataInt.getCell3());
 			EmailAddress3.sendKeys(dataInt.getEmailAddress3());
 			LOG.info("Successfully filled Emergency Contacts");
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}
+	
 	public void pickupafterschool(DataInt dataInt) throws Exception {
-		try {	
+			
 			LOG.info("Filling pickup persons details");
 			Pickupname1.sendKeys(dataInt.getPickupname1());
 			PickuppersonTelephone1.sendKeys(dataInt.getPickuppersonTelephone1());
@@ -129,14 +120,11 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Pickupname10.sendKeys(dataInt.getPickupname10());
 			PickuppersonTelephone10.sendKeys(dataInt.getPickuppersonTelephone10());
 			LOG.info("Successfully filled  pickup persons details");
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}	
+	
 	public void medicalConditions(DataInt dataInt) throws Exception {
-		try {	
+			
 			LOG.info("Filling Medical Conditions details");
 			waitForSeconds(3);
 			browsername();
@@ -147,15 +135,11 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Noknownhealthproblems.click();
 			waitForSeconds(2);
 			LOG.info("Successfully filled  Medical Conditions details");
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}
 	
 	public void signatureanddate(DataInt dataInt) throws Exception {
-		try {
+		
 			LOG.info("Entering details of name,signature and date");
 			Parentorgurdain.sendKeys(dataInt.getParentorGuardian());
 			browsername();
@@ -180,15 +164,11 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Submit.click();
 			LOG.info("Student Form Submited Successfully");
 			checkAlert();
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}
 	
-	public void paymentprocess(DataInt dataInt){
-		try {
+	public void paymentprocess(DataInt dataInt) throws Exception{
+		
 			if (Selectbox.isEnabled()) {
 				Selectbox.click();
 				waitForSeconds(2);
@@ -196,13 +176,11 @@ public class StudentFormFill extends StudentFormPageObjects {
 				paymentdetails(dataInt);
 			   }
 			
-		} catch (Exception e) {
-			e.getMessage();
-		}
+		
 	 }
 	
 	public void paymentdetails(DataInt dataInt) throws Exception {
-		try {
+		
 			waitForSeconds(6);
 			Cardtype.sendKeys(dataInt.getCardtype());
 			Cardnumber.sendKeys(dataInt.getCardnumber());
@@ -216,27 +194,8 @@ public class StudentFormFill extends StudentFormPageObjects {
 		    waitForSeconds(1);
 			Studentdetails.click();
 			
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}
 	
-	
-	
-	
-	
-	
-			
-			
-			
-			
-			
-	
-	
-	
-	
-	
-	
+
 }

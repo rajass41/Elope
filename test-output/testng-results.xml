@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
       <![CDATA[=====Browser Session Started=====]]>
@@ -8,12 +8,12 @@
       <![CDATA[=====Browser Session End=========]]>
     </line>
   </reporter-output>
-  <suite name="EP_Automation" duration-ms="43149" started-at="2017-04-28T07:39:24Z" finished-at="2017-04-28T07:40:07Z">
+  <suite name="EP_Automation" duration-ms="64870" started-at="2017-06-01T09:13:11Z" finished-at="2017-06-01T09:14:16Z">
     <groups>
     </groups>
-    <test name="EP_Automation" duration-ms="43149" started-at="2017-04-28T07:39:24Z" finished-at="2017-04-28T07:40:07Z">
+    <test name="EP_Automation" duration-ms="64870" started-at="2017-06-01T09:13:11Z" finished-at="2017-06-01T09:14:16Z">
       <class name="com.ep.testscripts.TestSuite">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@44c03695]" name="setUp" is-config="true" duration-ms="21758" started-at="2017-04-28T13:09:24Z" finished-at="2017-04-28T13:09:46Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@3bd82cf5]" name="setUp" is-config="true" duration-ms="10666" started-at="2017-06-01T14:43:11Z" finished-at="2017-06-01T14:43:22Z">
           <params>
             <param index="0">
               <value>
@@ -27,18 +27,29 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@44c03695]" name="Login" duration-ms="16241" started-at="2017-04-28T13:09:46Z" description="Login" data-provider="getLogin" finished-at="2017-04-28T13:10:02Z">
+        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@3bd82cf5]" name="Login" duration-ms="15749" started-at="2017-06-01T14:43:22Z" description="Login" data-provider="getLogin" finished-at="2017-06-01T14:43:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@6ad3381f]]>
+                <![CDATA[com.ep.datainitialization.DataInt@3401a114]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@44c03695]" name="close" is-config="true" duration-ms="5074" started-at="2017-04-28T13:10:02Z" finished-at="2017-04-28T13:10:07Z">
+        <test-method status="PASS" signature="fillingform(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@3bd82cf5]" name="fillingform" duration-ms="31336" started-at="2017-06-01T14:43:38Z" description="StudentFormfill" data-provider="getStudentForm" finished-at="2017-06-01T14:44:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.ep.datainitialization.DataInt@5066d65f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillingform -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@3bd82cf5]" name="close" is-config="true" duration-ms="7071" started-at="2017-06-01T14:44:09Z" finished-at="2017-06-01T14:44:16Z">
           <reporter-output>
             <line>
               <![CDATA[=====Browser Session End=========]]>

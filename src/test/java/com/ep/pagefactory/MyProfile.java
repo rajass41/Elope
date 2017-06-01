@@ -13,7 +13,7 @@ public class MyProfile extends MyProfilePageObjects {
 	
 	
 	public void updateprofile() throws Exception {
-		try {
+		
 			waitForSeconds(6);
 			Nameofparent.click();
 			waitForSeconds(1);
@@ -25,11 +25,7 @@ public class MyProfile extends MyProfilePageObjects {
 			waitForSeconds(4);
 			Profilesubmit.click();
 			LOG.info("Profile details has been updated successfully");
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
+		
 	}	
 
 }

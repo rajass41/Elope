@@ -66,6 +66,11 @@
 			<version>2.53.1</version>
 		</dependency>
 		<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-server</artifactId>
+        <version>2.53.1</version>
+    </dependency>
+		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.8.5</version>
@@ -113,10 +118,6 @@
             <artifactId>jxl</artifactId>
     		<version>2.6.12</version>
         </dependency>
-		<dependency>
-			<groupId>org.automationtesting</groupId>
-			<artifactId>excelreport.Xl</artifactId>
-		</dependency>
 		</dependencies>
 		
 		

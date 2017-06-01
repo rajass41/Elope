@@ -9,13 +9,12 @@ import com.ep.pageobjects.ChangePasswordPageObjects;
 public class ChangePassword extends ChangePasswordPageObjects{
 
 	public ChangePassword(WebDriver driver) {
-		super(driver);
-		
+		super(driver); 	
 	}
 
 	
 	public void changepswd(DataInt dataInt) throws Exception {
-		try {
+		
 			waitForSeconds(6);
 			Nameofparent1.click();
 			waitForSeconds(1);
@@ -30,11 +29,7 @@ public class ChangePassword extends ChangePasswordPageObjects{
 			Changepassword.click();
 			LOG.info("Password changed successfully");
 		
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
-	}	
+		
+	   }	
 	
 }

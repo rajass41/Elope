@@ -15,7 +15,7 @@ public class ContactUs extends ContactUsPageObjects{
 
 	
 	public void contactformfilling(DataInt dataInt) throws Exception {
-		try {
+		
 			waitForSeconds(4);
 			Contact.click();
 			waitForSeconds(5);
@@ -43,10 +43,5 @@ public class ContactUs extends ContactUsPageObjects{
 			super.checkAlert();
 			LOG.info("Successfully filled contact details");
 		
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
-	}		
+	   }		
 }

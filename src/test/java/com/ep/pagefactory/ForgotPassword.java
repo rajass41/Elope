@@ -13,7 +13,7 @@ public class ForgotPassword  extends ForgotPasswordPageObjects{
 	
 	
 	public void forgottenpassword(DataInt dataInt) throws Exception {
-		try {
+		
 			waitForSeconds(7);
 			Forgotpswd.click();
 			waitForSeconds(4);
@@ -23,10 +23,6 @@ public class ForgotPassword  extends ForgotPasswordPageObjects{
 			Submitforforget.click();
 			LOG.info("Forgot password link has been sent successfully to registered email address");
 			
-		} catch (Exception e) {
-			excep = e.toString();
-			Assert.fail(excep);
-
-		}
-    }
+		
+       }
 }

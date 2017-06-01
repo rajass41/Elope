@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -30,8 +31,10 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 
+
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -59,6 +62,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 import com.ep.utilities.PropertiesFileReader;
@@ -103,7 +107,8 @@ public class CommonBase {
 	
 	public final int elementTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("element.time.out"));
 	public int windowTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("window.time.out"));
-			
+	public int pageLoadTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("page.Load.TimeOut"))	;
+	
 
 	public static final Logger LOG = Logger.getLogger(CommonBase.class);
 
@@ -224,6 +229,8 @@ public class CommonBase {
 		}/*else {
 			throw new IllegalArgumentException("The Browser Type is Undefined");
 		}*/
+		driver.manage().deleteAllCookies();
+     	driver.manage().timeouts().pageLoadTimeout(pageLoadTimeOut, TimeUnit.SECONDS);
      	driver.manage().window().maximize();
 		return driver;
 	}
@@ -234,12 +241,8 @@ public class CommonBase {
 		profile.setPreference("browser.download.folderList", 2);
 		profile.setPreference("browser.download.manager.showWhenStarting",false);
 		profile.setPreference("browser.download.dir",System.getProperty("user.dir") + "_Downloads");
-		profile.setPreference(
-				"browser.helperApps.neverAsk.openFile",
-				"application/octet-stream;application/pdf,text/csv,application/x-msexcel,application/excel,application/x-excel,application/vnd.ms-excel,image/png,image/jpeg,text/html,text/plain,application/msword,application/xml");
-		profile.setPreference(
-				"browser.helperApps.neverAsk.saveToDisk",
-				"application/octet-stream;application/pdf,text/csv,application/x-msexcel,application/excel,application/x-excel,application/vnd.ms-excel,image/png,image/jpeg,text/html,text/plain,application/msword,application/xml");
+		profile.setPreference("browser.helperApps.neverAsk.openFile","application/octet-stream;application/pdf,text/csv,application/x-msexcel,application/excel,application/x-excel,application/vnd.ms-excel,image/png,image/jpeg,text/html,text/plain,application/msword,application/xml");	
+		profile.setPreference("browser.helperApps.neverAsk.saveToDisk","application/octet-stream;application/pdf,text/csv,application/x-msexcel,application/excel,application/x-excel,application/vnd.ms-excel,image/png,image/jpeg,text/html,text/plain,application/msword,application/xml");				
 		profile.setPreference("pdfjs.disabled", true);
 		profile.setPreference("plugin.scan.Acrobat", "99.0");
 		profile.setPreference("plugin.scan.plid.all", false);

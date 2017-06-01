@@ -7,7 +7,7 @@ public class DataInt implements Serializable {
 	
 	private static final long serialVersionUID = -5841500346110682370L;
 	
-			//----Sign Up-----//
+			 //----Sign Up-----//
 	
 					public String FirstName ="";
 					
@@ -30,9 +30,6 @@ public class DataInt implements Serializable {
 					public String Email ="";
 					
 					public String Password ="";
-					
-					
-					
 					
 					
 			//----StudentForm----//
@@ -585,7 +582,6 @@ public class DataInt implements Serializable {
 					public void setPickuppersonTelephone10(String pickuppersonTelephone10) {
 						PickuppersonTelephone10 = pickuppersonTelephone10;
 					}
-					
 					
 					public String getHospitalorClinic() {
 						return HospitalorClinic;

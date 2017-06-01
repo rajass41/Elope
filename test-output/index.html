@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,12 @@
                     <div class="method-list-content passed suite-EP_Automation">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-EP_Automation" title="com.ep.testscripts.TestSuite" hash-for-method="Login(com.ep.datainitialization.DataInt@6ad3381f)">Login(com.ep.datainitialization.DataInt@6ad3381f)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-EP_Automation" title="com.ep.testscripts.TestSuite" hash-for-method="Login(com.ep.datainitialization.DataInt@3401a114)">Login(com.ep.datainitialization.DataInt@3401a114)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-EP_Automation" title="com.ep.testscripts.TestSuite" hash-for-method="fillingform(com.ep.datainitialization.DataInt@5066d65f)">fillingform(com.ep.datainitialization.DataInt@5066d65f)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-EP_Automation -->
@@ -124,12 +129,22 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Login(com.ep.datainitialization.DataInt@6ad3381f)">
-                  </a> <!-- Login(com.ep.datainitialization.DataInt@6ad3381f) -->
+                  <a name="Login(com.ep.datainitialization.DataInt@3401a114)">
+                  </a> <!-- Login(com.ep.datainitialization.DataInt@3401a114) -->
                   <span class="method-name">Login</span>
-                  <span class="parameters">(com.ep.datainitialization.DataInt@6ad3381f)</span>
+                  <span class="parameters">(com.ep.datainitialization.DataInt@3401a114)</span>
                   <em>
 (Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fillingform(com.ep.datainitialization.DataInt@5066d65f)">
+                  </a> <!-- fillingform(com.ep.datainitialization.DataInt@5066d65f) -->
+                  <span class="method-name">fillingform</span>
+                  <span class="parameters">(com.ep.datainitialization.DataInt@5066d65f)</span>
+                  <em>
+(StudentFormfill)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -145,6 +160,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite verbose=&quot;3&quot; name=&quot;EP_Automation&quot;&gt;
   &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.ep.listeners.AnnotationTransformer&quot;/&gt;
     &lt;listener class-name=&quot;com.ep.listeners.TestListener&quot;/&gt;
     &lt;listener class-name=&quot;com.ep.listeners.ExtentReporterNG&quot;/&gt;
   &lt;/listeners&gt;
@@ -191,16 +207,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Login')
+data.setCell(0, 1, 'fillingform')
 data.setCell(0, 2, 'com.ep.testscripts.TestSuite')
-data.setCell(0, 3, 16241);
+data.setCell(0, 3, 31336);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Login')
+data.setCell(1, 2, 'com.ep.testscripts.TestSuite')
+data.setCell(1, 3, 15749);
 window.suiteTableData['EP_Automation']= { tableData: data, tableDiv: 'times-div-EP_Automation'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 47 seconds</span>
               <div id="times-div-EP_Automation">
               </div> <!-- times-div-EP_Automation -->
             </div> <!-- times-div -->
@@ -232,12 +252,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">Login(com.ep.datainitialization.DataInt@6ad3381f)</span>
-                <span class="method-start">21828 ms</span>
+                <span class="method-name">Login(com.ep.datainitialization.DataInt@3401a114)</span>
+                <span class="method-start">10693 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fillingform(com.ep.datainitialization.DataInt@5066d65f)</span>
+                <span class="method-start">26454 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close</span>
-                <span class="method-start">38072 ms</span>
+                <span class="method-start">57794 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

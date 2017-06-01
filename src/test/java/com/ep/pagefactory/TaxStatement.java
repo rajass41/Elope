@@ -13,15 +13,13 @@ public class TaxStatement extends TaxStatementPageObjects{
 	}
 
 	public void taxreport() throws Exception{
-		try {
+		
 			waitForSeconds(4);
 			Nameofparent.click();
 			waitForSeconds(4);
 			TaxStatemnt.click();
 			Assert.assertTrue(driver.getTitle().contains("TaxReport"));
-		} catch (Exception e) {
-			e.getMessage();
-		}
+		
 		
 	}
 	

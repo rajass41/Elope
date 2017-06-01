@@ -156,3 +156,40 @@
 2017-04-28 13:27:52 INFO  CommonBase:26 - Parent Successfully Log In in to their account
 2017-04-28 14:40:57 INFO  CommonBase:20 - Getting Values of email and password
 2017-04-28 14:41:12 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-05-01 15:50:51 INFO  CommonBase:20 - Getting Values of email and password
+2017-05-01 15:51:09 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-05-01 16:20:11 INFO  CommonBase:20 - Getting Values of email and password
+2017-05-01 16:20:23 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-05-01 16:28:32 INFO  CommonBase:20 - Getting Values of email and password
+2017-05-01 16:28:44 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-05-01 16:38:31 INFO  CommonBase:20 - Getting Values of email and password
+2017-05-01 16:38:47 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-05-10 11:54:12 INFO  CommonBase:20 - Getting Values of email and password
+2017-05-10 11:54:23 INFO  CommonBase:26 - Parent Successfully Log In in to their account
+2017-06-01 12:56:46 INFO  CommonBase:19 - Getting Values of email and password
+2017-06-01 12:56:58 INFO  CommonBase:25 - Parent Successfully Log In in to their account
+2017-06-01 13:01:33 INFO  CommonBase:19 - Getting Values of email and password
+2017-06-01 13:06:04 INFO  CommonBase:19 - Getting Values of email and password
+2017-06-01 13:06:14 INFO  CommonBase:25 - Parent Successfully Log In in to their account
+2017-06-01 13:20:35 INFO  CommonBase:19 - Getting Values of email and password
+2017-06-01 13:20:45 INFO  CommonBase:25 - Parent Successfully Log In in to their account
+2017-06-01 13:27:25 INFO  CommonBase:21 - Parent Registration Starts
+2017-06-01 13:27:36 INFO  CommonBase:38 - Successfully Parent Registered
+2017-06-01 14:39:51 INFO  CommonBase:19 - Getting Values of email and password
+2017-06-01 14:40:02 INFO  CommonBase:25 - Parent Successfully Log In in to their account
+2017-06-01 14:40:25 INFO  CommonBase:32 - Filling Student Info
+2017-06-01 14:40:34 INFO  CommonBase:55 - Successfully filled student info details
+2017-06-01 14:40:35 INFO  CommonBase:63 - Filling Legal Parent/Guardian1
+2017-06-01 14:40:38 INFO  CommonBase:71 - Successfully filled Legal Parent/Guardian 1 details
+2017-06-01 14:40:38 INFO  CommonBase:72 - Filling Legal Parent/Guardian2
+2017-06-01 14:40:40 INFO  CommonBase:80 - Successfully filled Legal Parent/Guardian 2 details
+2017-06-01 14:40:40 INFO  CommonBase:86 - Filling Emergency Contacts
+2017-06-01 14:40:43 INFO  CommonBase:95 - Successfully filled Emergency Contacts
+2017-06-01 14:40:43 INFO  CommonBase:100 - Filling pickup persons details
+2017-06-01 14:40:51 INFO  CommonBase:121 - Successfully filled  pickup persons details
+2017-06-01 14:40:51 INFO  CommonBase:126 - Filling Medical Conditions details
+2017-06-01 14:40:57 INFO  CommonBase:135 - Successfully filled  Medical Conditions details
+2017-06-01 14:43:27 INFO  CommonBase:19 - Getting Values of email and password
+2017-06-01 14:43:37 INFO  CommonBase:25 - Parent Successfully Log In in to their account
+2017-06-01 14:43:58 INFO  CommonBase:32 - Filling Student Info
+2017-06-01 14:44:09 INFO  CommonBase:55 - Successfully filled student info details
