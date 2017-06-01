@@ -27,8 +27,6 @@ public class SetupEnvironment
 	public static int currentTestRowID;
 	public static int currentTestColumnID=1;
 	public static int currentTestDataSetID=2;
-		
-	//public static Keywords keywords;
 	public static String keyword_execution_result;
 	public static ArrayList<String> resultSetYes;
 	public static ArrayList<String> resultSetNo;
@@ -59,7 +57,6 @@ public class SetupEnvironment
                     {
                        	// RUN as many times as number of test data sets with runmode Y
 						resultSetYes.add(currentTestCaseName); // multiple sets of data
-//						ReadTestdata(currentTestCaseName);
 					}
 					else
 					{
@@ -121,6 +118,4 @@ public class SetupEnvironment
 		}
 	}
 	
-	
-
 }
