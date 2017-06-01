@@ -20,27 +20,21 @@ public class AnnotationTransformer implements IAnnotationTransformer {
     	try {
 				ae = test.start();
     	}
-    	catch (IllegalAccessException e) 
-    	{
+    	catch (IllegalAccessException e) {
 				e.printStackTrace();
 		}
-    	catch (IllegalArgumentException e) 
-		{
+    	catch (IllegalArgumentException e) {		
 				e.printStackTrace();
 		}
-    	catch (InvocationTargetException e) 
-    	{
+    	catch (InvocationTargetException e) {    	
 				e.printStackTrace();
 		}
-    	catch (NoSuchMethodException e) 
-    	{
+    	catch (NoSuchMethodException e) {
 				e.printStackTrace();
 		}
-    	catch (SecurityException e) 
-    	{
+    	catch (SecurityException e) {
 				e.printStackTrace();
-		}
-			
+		}	
 		if (ae.contains(annotation.getTestName())) 
 		{
 		    annotation.setEnabled(true);
