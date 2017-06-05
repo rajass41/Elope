@@ -2,9 +2,7 @@ package com.ep.testscripts;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-
 import com.ep.pageobjects.ExcelSheetObjects;
-
 import com.ep.utilities.Xls_Reader;
 
 
@@ -35,7 +33,7 @@ public class SetupEnvironment
 	
 	public ArrayList<String> start() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		
-		Xls_Reader Wb = new Xls_Reader("src/main/java/com/ep/test/data/Controller.xlsx"); 
+		Xls_Reader Wb = new Xls_Reader("src/main/java/com/ep/test/data/TestCases.xlsx"); 
 		resultSetYes = new ArrayList<String>();
 		resultSetNo= new ArrayList<String>();
 		  
@@ -71,7 +69,7 @@ public class SetupEnvironment
 
 	public static void SetdataSheet() throws Exception
 	{
-		Xls_Reader Wb_SET_SKIP = new Xls_Reader("src/main/java/com/ep/test/data/Controller.xlsx"); 
+		Xls_Reader Wb_SET_SKIP = new Xls_Reader("src/main/java/com/ep/test/data/TestCases.xlsx"); 
 		System.out.println("Workbook datasheet Name:"+Wb_SET_SKIP);
 		
 		for(currentSuiteID=2; currentSuiteID <= Wb_SET_SKIP.getRowCount(ExcelSheetObjects.TEST_SUITE_SHEET); currentSuiteID++)
@@ -84,7 +82,7 @@ public class SetupEnvironment
 	public static int Get_RowNum(String Test_case_Name) throws Exception
 	{
 		int RowNum = currentTestSuiteXLS.getCellRowNum(ExcelSheetObjects.TEST_CASES_SHEET, ExcelSheetObjects.SUITE_ID, Test_case_Name);
-		System.out.print(RowNum+" is the row number to write data in sheet");
+		//System.out.print(RowNum+" is the row number to write data in sheet");
 		return RowNum;
 	}
 	
