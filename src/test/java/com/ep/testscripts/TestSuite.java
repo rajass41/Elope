@@ -20,7 +20,7 @@ public class TestSuite extends Base {
     
 
 
-   @Test(description = "Signup", dataProvider = "getsignup",retryAnalyzer=Retry.class, priority = 0)
+   /*@Test(description = "Signup", dataProvider = "getsignup",retryAnalyzer=Retry.class, priority = 0)
 	public void SignupProcess(DataInt dataInt) throws Exception {
 		try {
 			signup=driverhome.getSignup();
@@ -31,7 +31,7 @@ public class TestSuite extends Base {
 			e.printStackTrace();
 		}
 			
-	}
+	}*/
 	
 	@Test(description = "Login", dataProvider = "getLogin", priority = 1)
 	public void Login(DataInt dataInt) throws Exception {
@@ -46,7 +46,7 @@ public class TestSuite extends Base {
 					
 	}
 	
-    @Test(description = "StudentFormfill", dataProvider = "getStudentForm" , priority = 2)
+	 @Test(description = "StudentFormfill",dataProvider = "getStudentForm" , priority = 2)
 	public void fillingform(DataInt dataInt) throws Exception {
 	 try {
 		    formfill=driverhome.getformfill();
@@ -65,7 +65,7 @@ public class TestSuite extends Base {
 				
 	}
 	
-    @Test(description = "StudentWaitingListFormfill", dataProvider = "getStudentForm" , priority = 3)
+  /*  @Test(description = "StudentWaitingListFormfill", dataProvider = "getStudentForm" , priority = 3)
 	public void waitinglistformfilling(DataInt dataInt) throws Exception {
 		try {
 			waitinglistform = driverhome.getWaitingListForm();
@@ -158,7 +158,7 @@ public class TestSuite extends Base {
 		}
 		
 	}
-	
+	*/
 	
 	@DataProvider
 	public Iterator<Object[]> getsignup(){
@@ -192,6 +192,3 @@ public class TestSuite extends Base {
 
 
 }
-
-
-

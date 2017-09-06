@@ -5,6 +5,11 @@
 
 	<test name="EP_Automation" preserve-order="true">
 		<parameter name="browser" value="chrome" />
+  	<!-- <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups> -->
 		<classes>
 			<class name="com.ep.testscripts.TestSuite">
 				<methods>

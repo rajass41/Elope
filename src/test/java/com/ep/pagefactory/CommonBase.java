@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -29,8 +30,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
-
 
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
@@ -56,14 +55,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 
 import com.ep.utilities.PropertiesFileReader;
 import com.ep.pagefactory.CommonBase;
@@ -83,7 +84,9 @@ public class CommonBase {
 	public String timeStamp;
 	public String browserName;
 	public String sikulipath = System.getProperty("user.dir");
-	public static String reportpath = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "TestReport.xlsx";
+	public static String reportpath1 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "TestReport.xlsx";
+	public static String reportpath2 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "Extent.html";
+	public static String reportpath3 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "src/main/java/com/ep/test/data"+ System.getProperty("file.separator")+ "TestCases.xlsx";
 	public String screenshot = System.getProperty("user.dir") + "_Screenshot";
 	public String str;
 	public String snum;
@@ -104,12 +107,9 @@ public class CommonBase {
 	String[] dialog;
 	protected String url = null;
 	protected String browser;
-	
 	public final int elementTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("element.time.out"));
 	public int windowTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("window.time.out"));
 	public int pageLoadTimeOut = Integer.parseInt(PropertiesFileReader.readvalueOfKey("page.Load.TimeOut"))	;
-	
-
 	public static final Logger LOG = Logger.getLogger(CommonBase.class);
 
 	@SuppressWarnings("static-access")//to suppress warnings relative to incorrect static access
@@ -179,6 +179,9 @@ public class CommonBase {
 			driver.get(url);
 
 		} else if (browser.equalsIgnoreCase("chrome")||browser.equalsIgnoreCase("google chrome")) {
+			// Set logging preference In Google Chrome browser capability to log browser errors.
+			LoggingPreferences pref = new LoggingPreferences();
+			pref.enable(LogType.BROWSER, Level.ALL);
 			Map<String, Object> prefs = new HashMap<String, Object>();				
 			prefs.put("profile.default_content_settings.popups", 0);
 			prefs.put("profile.default_content_setting_values.notifications", 2);
@@ -193,6 +196,7 @@ public class CommonBase {
 			cap.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
 			cap.setCapability(ChromeOptions.CAPABILITY, options);
 			cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+			cap.setCapability(CapabilityType.LOGGING_PREFS, pref);
 			System.setProperty(
 					"webdriver.chrome.driver",
 					System.getProperty("user.dir")
@@ -252,6 +256,7 @@ public class CommonBase {
 		profile.setPreference("browser.download.manager.useWindow", false);
 		profile.setPreference("browser.download.manager.showAlertOnComplete",false);
 		profile.setPreference("browser.download.manager.closeWhenDone", false);
+		profile.setPreference("webdriver.load.strategy", "unstable");
 		profile.setAcceptUntrustedCertificates(true);
 		profile.setAssumeUntrustedCertificateIssuer(false);
 		
@@ -548,12 +553,12 @@ public class CommonBase {
 
 			}
 	
-	public static void emailreport(){		 
-		 sendPDFReportByGMail("seleniumautomatonreports@gmail.com", "1111111!", "mani6747@gmail.com", "Elop Parent Automation Report", "");
+	public static void emailreport() throws Exception{		 
+		 sendPDFReportByGMail("seleniumautomatonreports@gmail.com", "1111111!", "mani6747@gmail.com", "Elop Automation Report", "");
 	 }	 
 	  
-	 private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
-		 System.out.println("Waiting for generating report....");
+	private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) throws Exception {
+		 System.out.println("Waiting for generating Testreports....");
 		 System.setProperty("javax.net.ssl.trustStore", "C://Program Files//Java//jre1.8.0_101//lib//security//cacerts");
 		 System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 		 Properties props = System.getProperties();		 
@@ -575,9 +580,8 @@ public class CommonBase {
 
 				}
 			});			 
-		 MimeMessage message = new MimeMessage(session);
-		 
-		try {
+		 MimeMessage message = new MimeMessage(session);		 
+		 try {
 			 //Set from address
 			 message.setFrom(new InternetAddress(from));
 			 message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
@@ -588,19 +592,15 @@ public class CommonBase {
 			 objMessageBodyPart.setText("Hi,"
 			 		+ "\n"
 			 		+ "\n"
-			 		+ "      Please Find The Attached Automation Report File download and then open it!"
+			 		+ "      Please Find The Attached Automation Report Files,please download and then open it!"
 			 		+ "\n"
 			 		+ "\n");
 			 Multipart multipart = new MimeMultipart();
 			 multipart.addBodyPart(objMessageBodyPart);
 			 objMessageBodyPart = new MimeBodyPart();
-			 String filename = reportpath;  
-			 File file = new File(filename);
-			 //Create data source to attach the file in mail
-			 DataSource source = new FileDataSource(file);
-			 objMessageBodyPart.setDataHandler(new DataHandler(source));
-			 objMessageBodyPart.setFileName(file.getName());
-			 multipart.addBodyPart(objMessageBodyPart);
+			 addAttachment(multipart, reportpath1);
+			 addAttachment(multipart, reportpath2);
+			 addAttachment(multipart, reportpath3);
 			 message.setContent(multipart);
 			 Transport transport = session.getTransport("smtp");
 			 transport.connect(host, from, pass);
@@ -609,13 +609,21 @@ public class CommonBase {
 		}
 		catch (AddressException ae) {		 
 			ae.printStackTrace();		 
-		}
-			 
+		} 
 		catch (MessagingException me) {		 
 			me.printStackTrace();		 
 		}
-		System.out.println("Report has been  Sent Successfully....");
+		System.out.println("Testreports has been Sent Successfully....");
 }
+	 
+	 
+	 private static void addAttachment(Multipart multipart, String filename)throws Exception{
+		    DataSource source = new FileDataSource(filename);
+		    BodyPart messageBodyPart = new MimeBodyPart();        
+		    messageBodyPart.setDataHandler(new DataHandler(source));
+		    messageBodyPart.setFileName(filename);
+		    multipart.addBodyPart(messageBodyPart);
+		}
 	 
 	//------------System Present Date select ------//
 		
@@ -722,7 +730,14 @@ public class CommonBase {
 				}
 			}
 	
-			
+			// Method to capture JSError log.
+			 public void GetJSErrosLog() {
+			  // Capture all JSerrors and print In console.
+			  LogEntries jserrors = driver.manage().logs().get(LogType.BROWSER);
+			  for (LogEntry error : jserrors) {
+			   System.out.println(error.getMessage());
+			  }
+			 }
 		
 				
 }

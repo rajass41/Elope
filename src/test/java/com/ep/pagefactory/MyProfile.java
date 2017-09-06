@@ -23,7 +23,7 @@ public class MyProfile extends MyProfilePageObjects {
 			Editprofile.click();
 			LOG.info("Updateing profile details");
 			waitForSeconds(4);
-			Profilesubmit.click();
+			//Profilesubmit.click();
 			LOG.info("Profile details has been updated successfully");
 		
 	}	

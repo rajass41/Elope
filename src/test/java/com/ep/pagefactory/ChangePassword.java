@@ -26,7 +26,7 @@ public class ChangePassword extends ChangePasswordPageObjects{
 			NewPassword.sendKeys(dataInt.getNewPassword());
 			ConfirmPassword.sendKeys(dataInt.getNewPassword());
 			waitForSeconds(2);
-			Changepassword.click();
+			//Changepassword.click();
 			LOG.info("Password changed successfully");
 		
 		

@@ -16,8 +16,6 @@ public class StudentFormFill extends StudentFormPageObjects {
 		super(driver);
 	}
 	
-	
-
 	public void studentinfo(DataInt dataInt) throws Exception {
 		
 			Assert.assertTrue(driver.getTitle().contains("Parent Dashboard"));
@@ -55,7 +53,6 @@ public class StudentFormFill extends StudentFormPageObjects {
 			LOG.info("Successfully filled student info details");
 			
 		}
-			
 			
 	public void legalparentorguardian(DataInt dataInt) throws Exception {
 		
@@ -163,7 +160,7 @@ public class StudentFormFill extends StudentFormPageObjects {
 			waitForSeconds(3);
 			Submit.click();
 			LOG.info("Student Form Submited Successfully");
-			checkAlert();
+			//checkAlert();
 		
 	}
 	

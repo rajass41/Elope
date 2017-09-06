@@ -57,20 +57,32 @@ public class TestListener implements ITestListener {
 	}
 
 	public void onFinish(ITestContext context) {
+		
+		//System.out.println("The name of the testcase OnFinish :"      +context.getName());
 	}
 
 	public void onTestStart(ITestResult result) {
+		
+		//System.out.println("The name of the testcase Onstart is :"        +result.getName());
 	}
 
 	public void onTestSuccess(ITestResult result) {
+		
+		//System.out.println("The name of the testcase Success is :"        +result.getName());
 	}
 
 	public void onTestSkipped(ITestResult result) {
+		
+		// System.out.println("The name of the testcase Skipped is :"       +result.getName());							    		
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		
+		//System.out.println("The Successpercentage of the testcase is :"     +result.getName());
 	}
 
 	public void onStart(ITestContext context) {
+		
+		//System.out.println("The name of the testcase Onstart is :"     +context.getName());
 	}
 }
