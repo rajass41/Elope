@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -94,6 +95,8 @@ public class CommonBase {
 	public String order;
 	public String today;
 	public String randomemail;
+	public String randomnumber;
+	public String id;
 	public static Properties CONFIG = null;
 	public static WebDriver driver;
 	public static WebElement webelement = null;
@@ -241,6 +244,7 @@ public class CommonBase {
 
 	
 	public static FirefoxProfile FirefoxDriverProfile() throws Exception {
+		
 		FirefoxProfile profile = new FirefoxProfile();
 		profile.setPreference("browser.download.folderList", 2);
 		profile.setPreference("browser.download.manager.showWhenStarting",false);
@@ -257,15 +261,14 @@ public class CommonBase {
 		profile.setPreference("browser.download.manager.showAlertOnComplete",false);
 		profile.setPreference("browser.download.manager.closeWhenDone", false);
 		profile.setPreference("webdriver.load.strategy", "unstable");
-		profile.setAcceptUntrustedCertificates(true);
-		profile.setAssumeUntrustedCertificateIssuer(false);
-		
 		/*profile.setPreference("javascript.enabled", true);
 		profile.setPreference("dom.max_chrome_script_run_time", 0);
 		profile.setPreference("dom.max_script_run_time", 0);
 		profile.setPreference("browser.startup.homepage_override.mstone", "ignore");
 		profile.setPreference("startup.homepage_welcome_url.additional",  "about:blank");
 		profile.setPreference("startup.homepage_welcome_url", "about:blank");*/
+		profile.setAcceptUntrustedCertificates(true);
+		profile.setAssumeUntrustedCertificateIssuer(false);
 		return profile;
 
 	}
@@ -738,6 +741,23 @@ public class CommonBase {
 			   System.out.println(error.getMessage());
 			  }
 			 }
+			 
+			 
+	  public String sevendigitrandomnumber()throws Exception{
+		       
+		         try {
+		        	Random rand = new Random();
+		     		int digit = rand.nextInt(3000000) + 3000000;
+		     		String number=String.valueOf(digit);
+		     		randomnumber=number;
+					
+				     } catch (Exception e) {
+					   e.printStackTrace();
+				   }
+				return randomnumber;
+				
+		     
+	  }
 		
 				
 }

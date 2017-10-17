@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite verbose="3" name="Failed suite [EP_Automation]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.ep.listeners.AnnotationTransformer"/>
+    <listener class-name="com.ep.listeners.TestListener"/>
+    <listener class-name="com.ep.listeners.ExtentReporterNG"/>
+  </listeners>
+  <test name="EP_Automation(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.ep.testscripts.TestSuite">
         <methods>
-          <include name="fillingform"/>
-          <include name="Login"/>
+          <include name="close"/>
+          <include name="fillingform" invocation-numbers="0"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- com.ep.testscripts.TestSuite -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- EP_Automation(failed) -->
+</suite> <!-- Failed suite [EP_Automation] -->

@@ -8,12 +8,12 @@
       <![CDATA[=====Browser Session End=========]]>
     </line>
   </reporter-output>
-  <suite name="EP_Automation" duration-ms="118675" started-at="2017-09-05T07:38:09Z" finished-at="2017-09-05T07:40:07Z">
+  <suite name="EP_Automation" duration-ms="77864" started-at="2017-10-11T09:54:17Z" finished-at="2017-10-11T09:55:35Z">
     <groups>
     </groups>
-    <test name="EP_Automation" duration-ms="118675" started-at="2017-09-05T07:38:09Z" finished-at="2017-09-05T07:40:07Z">
+    <test name="EP_Automation" duration-ms="77864" started-at="2017-10-11T09:54:17Z" finished-at="2017-10-11T09:55:35Z">
       <class name="com.ep.testscripts.TestSuite">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="setUp" is-config="true" duration-ms="14199" started-at="2017-09-05T13:08:09Z" finished-at="2017-09-05T13:08:23Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="setUp" is-config="true" duration-ms="26019" started-at="2017-10-11T15:24:17Z" finished-at="2017-10-11T15:24:43Z">
           <params>
             <param index="0">
               <value>
@@ -27,29 +27,29 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="Login" duration-ms="19277" started-at="2017-09-05T13:08:23Z" description="Login" data-provider="getLogin" finished-at="2017-09-05T13:08:42Z">
+        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="Login" duration-ms="23148" started-at="2017-10-11T15:24:43Z" description="Login" data-provider="getLogin" finished-at="2017-10-11T15:25:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@72ea6193]]>
+                <![CDATA[com.ep.datainitialization.DataInt@655ef322]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fillingform(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="fillingform" duration-ms="80063" started-at="2017-09-05T13:08:42Z" description="StudentFormfill" data-provider="getStudentForm" finished-at="2017-09-05T13:10:02Z">
+        <test-method status="PASS" signature="fillingform(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="fillingform" duration-ms="23508" started-at="2017-10-11T15:25:07Z" description="StudentFormfill" data-provider="getStudentForm" finished-at="2017-10-11T15:25:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@31aa3ca5]]>
+                <![CDATA[com.ep.datainitialization.DataInt@7e276594]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillingform -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="close" is-config="true" duration-ms="5072" started-at="2017-09-05T13:10:02Z" finished-at="2017-09-05T13:10:07Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@d35dea7]" name="close" is-config="true" duration-ms="5096" started-at="2017-10-11T15:25:30Z" finished-at="2017-10-11T15:25:35Z">
           <reporter-output>
             <line>
               <![CDATA[=====Browser Session End=========]]>

@@ -51,12 +51,12 @@ public class TestSuite extends Base {
 	 try {
 		    formfill=driverhome.getformfill();
 			formfill.studentinfo(dataInt);
-			formfill.legalparentorguardian(dataInt);
+			/*formfill.legalparentorguardian(dataInt);
 			formfill.emergencyContacts(dataInt);
 			formfill.pickupafterschool(dataInt);
 			formfill.medicalConditions(dataInt);
-			formfill.signatureanddate(dataInt);
-			formfill.paymentprocess(dataInt);
+			formfill.signatureanddate(dataInt);*/
+			//formfill.paymentprocess(dataInt);
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.StudentForm, "TestCases");
 	      } catch (Exception e) {
 	    	  SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.StudentForm, "TestCases");

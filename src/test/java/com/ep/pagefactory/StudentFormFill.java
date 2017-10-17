@@ -25,13 +25,14 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Assert.assertTrue(driver.getTitle().contains("StudentApplication"));
 			BeforeONLY.click();
 			waitForSeconds(3);
-			new Select(Schoolname).selectByVisibleText("Kate Bond Middle");
+			new Select(Schoolname).selectByVisibleText("Ross Elementary");
 			waitForSeconds(2);
 			LOG.info("Filling Student Info");
 			Lastname.sendKeys(dataInt.getLastname());
 			Firsttname.sendKeys(dataInt.getFirstname());
 			Middletname.sendKeys(dataInt.getMiddlename());
-			StateId.sendKeys(dataInt.getStateid());
+			StateId.sendKeys(sevendigitrandomnumber());
+			//StateId.sendKeys(dataInt.getStateid());
 			Grade.sendKeys(dataInt.getGrade());
 			browsername();
 			waitForSeconds(1);
@@ -172,8 +173,6 @@ public class StudentFormFill extends StudentFormPageObjects {
 				Makepayment.click();
 				paymentdetails(dataInt);
 			   }
-			
-		
 	 }
 	
 	public void paymentdetails(DataInt dataInt) throws Exception {
@@ -193,6 +192,4 @@ public class StudentFormFill extends StudentFormPageObjects {
 			
 		
 	}
-	
-
 }
