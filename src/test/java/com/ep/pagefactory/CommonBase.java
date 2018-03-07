@@ -96,7 +96,6 @@ public class CommonBase {
 	public String today;
 	public String randomemail;
 	public String randomnumber;
-	public String id;
 	public static Properties CONFIG = null;
 	public static WebDriver driver;
 	public static WebElement webelement = null;
@@ -750,7 +749,6 @@ public class CommonBase {
 		     		int digit = rand.nextInt(3000000) + 3000000;
 		     		String number=String.valueOf(digit);
 		     		randomnumber=number;
-					
 				     } catch (Exception e) {
 					   e.printStackTrace();
 				   }
