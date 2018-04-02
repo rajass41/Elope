@@ -1,10 +1,14 @@
 package com.ep.pagefactory;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import junit.framework.Assert;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.ep.datainitialization.DataInt;
@@ -23,8 +27,9 @@ public class StudentFormFill extends StudentFormPageObjects {
 			Newstudentform.click();
 			waitForSeconds(5);
 			Assert.assertTrue(driver.getTitle().contains("StudentApplication"));
-			BeforeONLY.click();
-			waitForSeconds(3);
+			waitForSeconds(1);
+			dropdwonhandle();
+			/*waitForSeconds(3);
 			new Select(Schoolname).selectByVisibleText("Ross Elementary");
 			waitForSeconds(2);
 			LOG.info("Filling Student Info");
@@ -52,8 +57,59 @@ public class StudentFormFill extends StudentFormPageObjects {
 			waitForSeconds(1);
 			NoDoesthestudentusemedicalequipment.click();
 			LOG.info("Successfully filled student info details");
-			
+			*/
 		}
+	
+	
+
+	 public void dropdwonhandle()throws Exception{
+
+			boolean breakIt = true;
+			while(true) {
+			breakIt = true;
+			try {
+			BeforeONLY.click();
+			waitForSeconds(5);
+			Select dd1 = new Select(Schoolname);	
+			List<WebElement> beforeprogram = dd1.getOptions();
+			ArrayList<Object> beforeprogramarr = new ArrayList<Object>();
+			for (int i = 0; i < beforeprogram.size(); i++) {
+			beforeprogramarr.add(beforeprogram.get(i).getText());
+			}
+			System.out.println(beforeprogramarr);
+		
+			AfterONLy.click();
+			waitForSeconds(5);
+			Select dd2 = new Select(Schoolname);	
+			List<WebElement> afterprogram = dd2.getOptions();
+			ArrayList<Object> afterprogramarr = new ArrayList<Object>();
+			for (int j = 0; j < afterprogram.size(); j++) {
+			afterprogramarr.add(afterprogram.get(j).getText());
+			}
+			System.out.println(afterprogramarr);
+			for (int k = 0; k < beforeprogram.size(); k++) {
+			for (int l = 0; l < afterprogram.size(); l++) {
+			if (beforeprogramarr.get(k).equals(afterprogramarr.get(l))) {
+			System.out.println("Matched"+ " " + beforeprogramarr.get(k) + " " + "with"  + " " + afterprogramarr.get(l));
+			} else {
+			System.out.println("Not Matched"+ " " + beforeprogramarr.get(k) + " " + "with"  + " " + afterprogramarr.get(l));
+			}
+			}
+		
+			}
+		
+		
+			} catch (Exception e) {
+			        if (e.getMessage().contains("element is not attached")) {
+			            breakIt = false;
+			        }
+			    }
+			    if (breakIt) {
+			        break;
+			    }
+			  }
+		
+			}
 			
 	public void legalparentorguardian(DataInt dataInt) throws Exception {
 		
