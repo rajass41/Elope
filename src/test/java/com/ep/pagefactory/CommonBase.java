@@ -86,9 +86,8 @@ public class CommonBase {
 	public String timeStamp;
 	public String browserName;
 	public String sikulipath = System.getProperty("user.dir");
-	public static String reportpath1 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "TestReport.xlsx";
-	public static String reportpath2 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "Extent.html";
-	public static String reportpath3 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "src/main/java/com/ep/test/data"+ System.getProperty("file.separator")+ "TestCases.xlsx";
+	public static String reportpath1 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "Extent.html";
+	public static String reportpath2 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "src/main/java/com/ep/test/data"+ System.getProperty("file.separator")+ "TestCases.xlsx";
 	public String screenshot = System.getProperty("user.dir") + "_Screenshot";
 	public String str;
 	public String snum;
@@ -610,7 +609,6 @@ public class CommonBase {
 			 objMessageBodyPart = new MimeBodyPart();
 			 addAttachment(multipart, reportpath1);
 			 addAttachment(multipart, reportpath2);
-			 addAttachment(multipart, reportpath3);
 			 message.setContent(multipart);
 			 Transport transport = session.getTransport("smtp");
 			 transport.connect(host, from, pass);
