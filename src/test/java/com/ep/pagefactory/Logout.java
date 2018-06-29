@@ -1,21 +1,29 @@
 package com.ep.pagefactory;
 
 import org.openqa.selenium.WebDriver;
-import com.ep.pageobjects.LogoutObject;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-public class Logout extends LogoutObject {
+
+public class Logout extends CommonBase {
 
 	public Logout(WebDriver driver) {
 		super(driver);
 	}
 	
+	@FindBy(how = How.CSS, using = "span.username")
+	public static WebElement Nameofparent;
+	
+	@FindBy(how = How.XPATH, using = "//ul[@class='dropdown-menu']/li[5]/a")
+	public static WebElement Logout;
+	
 	public void accountlogout() throws Exception {
 		
-			waitForSeconds(6);
+			implicitWait();
 			Nameofparent.click();
-			waitForSeconds(2);
 			Logout.click();
-			LOG.info("Log Out Successfully");
+			LOG.info("Logged Out Successfully");
 		
 	 }	
 

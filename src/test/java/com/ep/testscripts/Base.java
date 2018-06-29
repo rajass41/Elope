@@ -14,7 +14,7 @@ import com.ep.pagefactory.Login;
 import com.ep.pagefactory.Logout;
 import com.ep.pagefactory.MyProfile;
 import com.ep.pagefactory.ParentRegistration;
-import com.ep.pagefactory.StudentFormFill;
+import com.ep.pagefactory.StudentRegistration;
 import com.ep.pagefactory.StudentWaitingListForm;
 import com.ep.pagefactory.TaxStatement;
 import com.ep.utilities.Xls_Reader;
@@ -32,7 +32,7 @@ public class Base {
 	public DriverHome driverhome;
 	public ParentRegistration signup;
 	public Login login;
-	public StudentFormFill formfill;
+	public StudentRegistration formfill;
 	public StudentWaitingListForm waitinglistform;
 	public ContactUs contact;
 	public ChangePassword cpswd;
@@ -65,7 +65,7 @@ public class Base {
 		try {
 			Thread.sleep(5000);
 		    //driverhome.emailreport();
-			driverhome.quitDriver();
+			//driverhome.quitDriver();
 			Reporter.log("=====Browser Session End=========", true);
 		} catch (WebDriverException e) {
 			System.out.println(e); 

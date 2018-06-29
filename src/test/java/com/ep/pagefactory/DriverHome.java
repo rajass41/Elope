@@ -30,8 +30,8 @@ public class DriverHome extends CommonBase {
 		return PageFactory.initElements(driver, Login.class);
 	}
 	
-	public StudentFormFill getformfill(){
-		return PageFactory.initElements(driver, StudentFormFill.class);
+	public StudentRegistration getformfill(){
+		return PageFactory.initElements(driver, StudentRegistration.class);
 	}
 	
 	public StudentWaitingListForm getWaitingListForm(){

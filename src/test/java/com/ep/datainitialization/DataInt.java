@@ -64,6 +64,8 @@ public class DataInt implements Serializable {
 					
 					public String Telephone ="";
 					
+					public String LegalParentGuardianName1="";	
+					
 					public String Parentaddress1 ="";
 					
 					public String Zip1 ="";
@@ -353,6 +355,12 @@ public class DataInt implements Serializable {
 					}
 					public void setTelephone(String telephone) {
 						Telephone = telephone;
+					}
+					public String getLegalParentGuardianName1() {
+						return LegalParentGuardianName1;
+					}
+					public void setLegalParentGuardianName1(String legalParentGuardianName1) {
+						LegalParentGuardianName1 = legalParentGuardianName1;
 					}
 					public String getParentaddress1() {
 						return Parentaddress1;

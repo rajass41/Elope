@@ -1,5 +1,6 @@
 package com.ep.utilities;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 //import org.apache.log4j.Logger;
 import com.ep.datainitialization.DataInt;
@@ -7,8 +8,6 @@ import com.ep.datainitialization.DataInt;
 public class Util {
 
 
-
-//public static final Logger LOG = Logger.getLogger(Util.class);
 
 public static LinkedList<Object[]> getSignup(String sheetName1,Xls_Reader xls) {
 	
@@ -175,6 +174,7 @@ public static LinkedList<Object[]> getStudentForm(String sheetName1,Xls_Reader x
 				dataInitialization.setMonth(xls.getCellData(sheetName1, 59, i));
 				dataInitialization.setYear(xls.getCellData(sheetName1,60, i));
 				dataInitialization.setCVV(xls.getCellData(sheetName1, 61, i));
+				dataInitialization.setLegalParentGuardianName1(xls.getCellData(sheetName1, 62, i));
 				
 				obj[0] = dataInitialization;
 				studentform.add(obj);
@@ -232,7 +232,7 @@ public static LinkedList<Object[]> getContactus(String sheetName1,Xls_Reader xls
 
     }
 
-public static LinkedList<Object[]> getChangePassword(String sheetName1,Xls_Reader xls) {
+public static LinkedList<Object[]> getChangePassword(String sheetName6,Xls_Reader xls) {
 	
 
 	LinkedList<Object[]> changepassword = new LinkedList<Object[]>();
@@ -242,7 +242,7 @@ public static LinkedList<Object[]> getChangePassword(String sheetName1,Xls_Reade
 		int dataStartRowNum = 3;
 		int totalRows = 0;
 
-		while (!xls.getCellData(sheetName1, 0, dataStartRowNum + totalRows).equals("")) {
+		while (!xls.getCellData(sheetName6, 0, dataStartRowNum + totalRows).equals("")) {
 			
 			totalRows++;
 		}
@@ -252,10 +252,10 @@ public static LinkedList<Object[]> getChangePassword(String sheetName1,Xls_Reade
 			dataInitialization = new DataInt();
 			Object obj[] = new Object[1];
 
-			if (xls.getCellData(sheetName1, 0, i).equalsIgnoreCase("ChangePassword")) {
+			if (xls.getCellData(sheetName6, 0, i).equalsIgnoreCase("ChangePassword")) {
 
-				dataInitialization.setCurrentPassword(xls.getCellData(sheetName1, 1, i));
-				dataInitialization.setNewPassword(xls.getCellData(sheetName1, 2, i));
+				dataInitialization.setCurrentPassword(xls.getCellData(sheetName6, 1, i));
+				dataInitialization.setNewPassword(xls.getCellData(sheetName6, 2, i));
 	
 				obj[0] = dataInitialization;
 				changepassword.add(obj);
@@ -269,6 +269,25 @@ public static LinkedList<Object[]> getChangePassword(String sheetName1,Xls_Reade
 	return changepassword;
 
     }
+
+public static LinkedList<Object[]> mergesheets(String firstsheet, String secondsheet,Xls_Reader xls){
+	
+	
+				LinkedList<Object[]>dataoftabone=new LinkedList<Object[]>();
+				dataoftabone=getLoginData(firstsheet, xls);	
+				LinkedList<Object[]>dataoftabtwo=new LinkedList<Object[]>();
+				dataoftabtwo=getChangePassword(secondsheet, xls);
+				Iterator<Object[]>itr=dataoftabtwo.iterator();
+				
+				if (itr.hasNext()) {
+		
+					dataoftabone.add(itr.next());
+				}
+
+			return dataoftabone;
+		}
+
+
 
 }
 

@@ -13,8 +13,8 @@
       <class name="com.ep.testscripts.TestSuite">
         <methods>
           <include name="close"/>
-          <include name="fillingform" invocation-numbers="0"/>
           <include name="setUp"/>
+          <include name="waitinglistformfilling" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ep.testscripts.TestSuite -->
     </classes>

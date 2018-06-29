@@ -1,6 +1,7 @@
 package com.ep.pagefactory;
 
 import java.awt.Robot;
+
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.text.DateFormat;
@@ -40,7 +41,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -432,11 +433,11 @@ public class CommonBase {
 	
 	public boolean checkAlert() {
 		try {
-			str = driver.switchTo().alert().getText();
-			driver.switchTo().alert().accept();
+			new WebDriverWait(driver, 5).until(ExpectedConditions.alertIsPresent()).accept();
 			return true;
 
-		} catch (NoAlertPresentException Ex) {
+		} catch (Exception e) {
+			e.printStackTrace();
 
 		}
 		return false;
@@ -464,15 +465,22 @@ public class CommonBase {
 	}
 
 	
-	public void robot() throws Exception {
+	public String robot(String element) throws Exception {
 		
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_A);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 		robot.keyRelease(KeyEvent.VK_A);
-		robot.keyPress(KeyEvent.VK_DELETE);
-		robot.keyRelease(KeyEvent.VK_DELETE);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_C);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_C);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		return element;
 	}
 
 	
@@ -746,16 +754,48 @@ public class CommonBase {
 		       
 		         try {
 		        	Random rand = new Random();
-		     		int digit = rand.nextInt(3000000) + 3000000;
+		     		int digit = rand.nextInt(1000000) + 3000000;
 		     		String number=String.valueOf(digit);
 		     		randomnumber=number;
 				     } catch (Exception e) {
 					   e.printStackTrace();
 				   }
+		        // System.out.println(randomnumber);
 				return randomnumber;
+				
 				
 		     
 	  }
+	  
+	  public void implicitWait() {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
 		
-				
+	public void copyTextIntoAnotherTextfield(WebElement element1,WebElement element2) {
+		
+		element1.sendKeys(Keys.chord(Keys.CONTROL,"a"),Keys.chord(Keys.CONTROL,"c"));
+		implicitWait();
+		element2.sendKeys(Keys.chord(Keys.CONTROL,"a"),Keys.chord(Keys.CONTROL,"v"));
+	}
+	
+	
+	public static void HighLightElement(WebElement element){
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver; 
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid orange;');", element);
+	 
+			try {
+				Thread.sleep(1000);
+				} 
+				catch (InterruptedException e) {
+					}
+				js.executeScript("arguments[0].setAttribute('style','border: solid 2px white')", element); 
+		}
+	
+	public void explicitWaitVisible(WebElement element) {
+		   WebDriverWait wait = new WebDriverWait(driver, 10);
+	       wait.until(ExpectedConditions.visibilityOf(element));
+	   }
+	
+	  
 }
