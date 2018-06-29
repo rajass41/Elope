@@ -35,9 +35,9 @@ public class TestSuite extends Base {
 		try {
 			login = driverhome.getLogin();
 			login.checkLogin(dataInt);
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS,ExcelSheetObjects.LoginWithValidCredentials, "TestCases");
+			//SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS,ExcelSheetObjects.LoginWithValidCredentials, "TestCases");
 		} catch (Exception e) {
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.LoginWithValidCredentials, "TestCases");
+			//SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.LoginWithValidCredentials, "TestCases");
 			e.printStackTrace();
 		}
 
@@ -80,24 +80,24 @@ public class TestSuite extends Base {
 		try {
 			contact = driverhome.getcontact();
 			contact.contactformfilling(dataInt);
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ContactUsForm,"TestCases");
+			//SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ContactUsForm,"TestCases");
 
 		} catch (Exception e) {
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL, ExcelSheetObjects.ContactUsForm,"TestCases");
+			//SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL, ExcelSheetObjects.ContactUsForm,"TestCases");
 			e.printStackTrace();
 		}
 
 	}
 
-	@Test(description = "Changepassword", dataProvider = "getChangePassword", priority = 5)
+	@Test(description = "Changepassword", dataProvider = "getChangepassword", priority = 5)
 	public void ChangePassword(DataInt dataInt) throws Exception {
 		try {
 			cpswd = driverhome.getcpswd();
 			cpswd.checkLogintochnagepswd(dataInt);
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Changepassword,"TestCases");
+			//SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Changepassword,"TestCases");
 
 		} catch (Exception e) {
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL, ExcelSheetObjects.Changepassword,"TestCases");
+			//SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL, ExcelSheetObjects.Changepassword,"TestCases");
 			e.printStackTrace();
 		}
 
@@ -188,7 +188,10 @@ public class TestSuite extends Base {
 	@DataProvider
 	public Iterator<Object[] >getLoginandChangepasswrod() {
 		LinkedList<Object[]>ll=new LinkedList<Object[]>();
+		
 		ll = Util.mergesheets("Login","ChangePassword", xls);
+		System.out.println(ll);
+		System.out.println( ll.iterator());
 		return ll.iterator();
 	}
 

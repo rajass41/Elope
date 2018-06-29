@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ep.datainitialization.DataInt;
 
-import junit.framework.Assert;
+import org.testng.Assert;
 
 
 public class StudentWaitingListForm extends StudentRegistration {

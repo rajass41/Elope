@@ -13,18 +13,17 @@
 		<classes>
 			<class name="com.ep.testscripts.TestSuite">
 				<methods>
-				
-				    
-				  
-			            
+				<include name="Login"></include>
+				    <include name="ChangePassword"></include>
+				  			            
 				</methods>
 
 			</class>
 		</classes>
 	</test>
-	<listeners>
+	<!-- <listeners>
 	    <listener class-name="com.ep.listeners.AnnotationTransformer"></listener>
        <listener class-name="com.ep.listeners.TestListener"/>
-       <listener class-name="com.ep.listeners.ExtentReporterNG"/>
-  </listeners>
+       <listener class-name="com.ep.listeners.ExtentReporterNG"/> 
+  </listeners>-->
   </suite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="10" passed="10">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
     <line>
       <![CDATA[=====Browser Session Started=====]]>
@@ -8,12 +8,12 @@
       <![CDATA[=====Browser Session End=========]]>
     </line>
   </reporter-output>
-  <suite name="EP_Automation" duration-ms="162082" started-at="2018-06-29T06:15:07Z" finished-at="2018-06-29T06:17:49Z">
+  <suite name="EP_Automation" duration-ms="27761" started-at="2018-11-20T09:44:16Z" finished-at="2018-11-20T09:44:44Z">
     <groups>
     </groups>
-    <test name="EP_Automation" duration-ms="162082" started-at="2018-06-29T06:15:07Z" finished-at="2018-06-29T06:17:49Z">
+    <test name="EP_Automation" duration-ms="27761" started-at="2018-11-20T09:44:16Z" finished-at="2018-11-20T09:44:44Z">
       <class name="com.ep.testscripts.TestSuite">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="setUp" is-config="true" duration-ms="29720" started-at="2018-06-29T11:45:07Z" finished-at="2018-06-29T11:45:37Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.ep.testscripts.TestSuite@c8c12ac]" name="setUp" is-config="true" duration-ms="12927" started-at="2018-11-20T15:14:16Z" finished-at="2018-11-20T15:14:29Z">
           <params>
             <param index="0">
               <value>
@@ -27,110 +27,51 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="SignupProcess(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="SignupProcess" duration-ms="12525" started-at="2018-06-29T11:45:37Z" description="Signup" data-provider="getsignup" finished-at="2018-06-29T11:45:49Z">
+        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@c8c12ac]" name="Login" duration-ms="7723" started-at="2018-11-20T15:14:29Z" description="Login" data-provider="getLoginandChangepassword" finished-at="2018-11-20T15:14:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@3f270e0a]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SignupProcess -->
-        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="Login" duration-ms="183" started-at="2018-06-29T11:45:49Z" description="Login" data-provider="getLogin" finished-at="2018-06-29T11:45:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.ep.datainitialization.DataInt@3724af13]]>
+                <![CDATA[com.ep.datainitialization.DataInt@30af5b6b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fillingform(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="fillingform" duration-ms="73563" started-at="2018-06-29T11:45:49Z" description="StudentFormfill" data-provider="getStudentForm" finished-at="2018-06-29T11:47:03Z">
+        <test-method status="PASS" signature="Login(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@c8c12ac]" name="Login" duration-ms="28" started-at="2018-11-20T15:14:37Z" description="Login" data-provider="getLoginandChangepassword" finished-at="2018-11-20T15:14:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@7e5d9a50]]>
+                <![CDATA[com.ep.datainitialization.DataInt@17aad511]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fillingform -->
-        <test-method status="PASS" signature="waitinglistformfilling(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="waitinglistformfilling" duration-ms="19997" started-at="2018-06-29T11:47:03Z" description="StudentWaitingListFormfill" data-provider="getStudentForm" finished-at="2018-06-29T11:47:23Z">
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="ChangePassword(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@c8c12ac]" name="ChangePassword" duration-ms="35" started-at="2018-11-20T15:14:37Z" description="Changepassword" data-provider="getLoginandChangepassword" finished-at="2018-11-20T15:14:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@3fb6cf60]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- waitinglistformfilling -->
-        <test-method status="PASS" signature="ContactUs(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="ContactUs" duration-ms="6597" started-at="2018-06-29T11:47:23Z" description="ContactUsForm" data-provider="getContactus" finished-at="2018-06-29T11:47:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.ep.datainitialization.DataInt@640f11a1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ContactUs -->
-        <test-method status="PASS" signature="ChangePassword(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="ChangePassword" duration-ms="2101" started-at="2018-06-29T11:47:30Z" description="Changepassword" data-provider="getChangePassword" finished-at="2018-06-29T11:47:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.ep.datainitialization.DataInt@b70da4c]]>
+                <![CDATA[com.ep.datainitialization.DataInt@46944ca9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChangePassword -->
-        <test-method status="PASS" signature="Updateingprofile(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="Updateingprofile" duration-ms="6851" started-at="2018-06-29T11:47:32Z" description="ProfileUpdate" data-provider="getsignup" finished-at="2018-06-29T11:47:39Z">
+        <test-method status="PASS" signature="ChangePassword(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@c8c12ac]" name="ChangePassword" duration-ms="1866" started-at="2018-11-20T15:14:37Z" description="Changepassword" data-provider="getLoginandChangepassword" finished-at="2018-11-20T15:14:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.ep.datainitialization.DataInt@14d14731]]>
+                <![CDATA[com.ep.datainitialization.DataInt@22875539]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Updateingprofile -->
-        <test-method status="PASS" signature="Taxstatement(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="Taxstatement" duration-ms="184" started-at="2018-06-29T11:47:39Z" description="Tax" data-provider="getLogin" finished-at="2018-06-29T11:47:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.ep.datainitialization.DataInt@1ae67cad]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Taxstatement -->
-        <test-method status="PASS" signature="AccLogout()[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="AccLogout" duration-ms="1572" started-at="2018-06-29T11:47:39Z" description="AccountLogout" finished-at="2018-06-29T11:47:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AccLogout -->
-        <test-method status="PASS" signature="ForgotPassword(com.ep.datainitialization.DataInt)[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="ForgotPassword" duration-ms="3543" started-at="2018-06-29T11:47:40Z" description="Forgotpassword" data-provider="getLogin" finished-at="2018-06-29T11:47:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.ep.datainitialization.DataInt@45905bff]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ForgotPassword -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@7d8704ef]" name="close" is-config="true" duration-ms="5012" started-at="2018-06-29T11:47:44Z" finished-at="2018-06-29T11:47:49Z">
+        </test-method> <!-- ChangePassword -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.ep.testscripts.TestSuite@c8c12ac]" name="close" is-config="true" duration-ms="5001" started-at="2018-11-20T15:14:39Z" finished-at="2018-11-20T15:14:44Z">
           <reporter-output>
             <line>
               <![CDATA[=====Browser Session End=========]]>

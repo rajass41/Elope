@@ -1,6 +1,6 @@
 package com.ep.pagefactory;
 
-import junit.framework.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +13,6 @@ public class Login extends CommonBase{
 	public Login(WebDriver driver) {
 		super(driver);
 	}
-	
 	
 	
 	@FindBy(how = How.XPATH, using = "//div[@class='top-nav']/a[3]")

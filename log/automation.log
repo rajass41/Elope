@@ -26,3 +26,36 @@
 2018-06-29 11:47:40 INFO  CommonBase:26 - Logged Out Successfully
 2018-06-29 11:47:42 INFO  CommonBase:40 - Entering registerd email address
 2018-06-29 11:47:44 INFO  CommonBase:44 - Forgot password resetlink has been sent
+2018-11-20 12:35:56 INFO  CommonBase:52 - Need to Login
+2018-11-20 12:36:03 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 12:36:13 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 12:50:12 INFO  CommonBase:52 - Need to Login
+2018-11-20 12:50:16 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 12:50:24 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 13:06:05 INFO  CommonBase:52 - Need to Login
+2018-11-20 13:06:14 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 13:06:26 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 13:07:55 INFO  CommonBase:52 - Need to Login
+2018-11-20 13:08:16 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 13:08:27 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 13:11:31 INFO  CommonBase:52 - Need to Login
+2018-11-20 13:11:40 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 13:11:49 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 13:20:16 INFO  CommonBase:52 - Need to Login
+2018-11-20 13:20:21 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 13:20:27 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 15:05:47 INFO  CommonBase:52 - Need to Login
+2018-11-20 15:05:50 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 15:05:54 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 15:08:31 INFO  CommonBase:52 - Need to Login
+2018-11-20 15:08:34 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 15:08:38 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 15:09:21 INFO  CommonBase:52 - Need to Login
+2018-11-20 15:09:24 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 15:09:28 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 15:10:32 INFO  CommonBase:52 - Need to Login
+2018-11-20 15:10:37 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 15:10:41 INFO  CommonBase:40 - Parent Successfully Logged in to their account
+2018-11-20 15:14:29 INFO  CommonBase:52 - Need to Login
+2018-11-20 15:14:33 INFO  CommonBase:33 - Retriving Values of email and password from Test data file
+2018-11-20 15:14:37 INFO  CommonBase:40 - Parent Successfully Logged in to their account

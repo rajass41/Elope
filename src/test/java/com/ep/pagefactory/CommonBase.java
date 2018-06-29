@@ -199,13 +199,7 @@ public class CommonBase {
 			cap.setCapability(ChromeOptions.CAPABILITY, options);
 			cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 			cap.setCapability(CapabilityType.LOGGING_PREFS, pref);
-			System.setProperty(
-					"webdriver.chrome.driver",
-					System.getProperty("user.dir")
-							+ System.getProperty("file.separator")
-							+ "BrowserDrivers"
-							+ System.getProperty("file.separator")
-							+ "chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+ System.getProperty("file.separator")+ "BrowserDrivers"+ System.getProperty("file.separator")+ "chromedriver.exe");
 			driver = new ChromeDriver(cap);
 			driver.get(url);
 
@@ -791,7 +785,7 @@ public class CommonBase {
 		}
 	
 	public void explicitWaitVisible(WebElement element) {
-		   WebDriverWait wait = new WebDriverWait(driver, 10);
+		   WebDriverWait wait = new WebDriverWait(driver, 15);
 	       wait.until(ExpectedConditions.visibilityOf(element));
 	   }
 	
