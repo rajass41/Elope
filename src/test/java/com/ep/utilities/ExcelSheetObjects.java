@@ -1,4 +1,4 @@
-package com.ep.pageobjects;
+package com.ep.utilities;
 
 public class ExcelSheetObjects {
 
